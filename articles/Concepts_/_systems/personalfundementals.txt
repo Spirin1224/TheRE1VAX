@@ -1,0 +1,24 @@
+Personal Fundamentals
+—TTC0RE
+
+A system,
+Defined in this context by myself for this article
+
+Is a protocol for writing, reading, transmitting and ‘holding’ information.
+
+—
+A system is a collection of ‘areas’ that serve a function that gives structure to a purpose.
+—
+
+
+Basic Fundamentals :
+
+:Should be stable and created to work correctly:
+Instead of a single error causing the failure of a operation,
+It should be built around required actions/
+Or rather, that if the protocol meets basic ‘points’ or requirements,
+Then it should work, regardless of other variables.
+
+Basically,
+“As long as #variable is ###, and matches #variable, then operation should succeed”
+Perhaps the result maybe have varying success, but the operation should still work.

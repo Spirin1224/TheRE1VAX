@@ -1,0 +1,89 @@
+Sentinel Codex (writing)
+—TTC0RE
+
+
+A concept someone briefly described to me in some online area,
+(Young guy too)
+
+I asked him if I could take it and ‘use’, or apply it as a design.
+He graciously said ‘sure’.
+
+So. The credit goes to him, as does the name(?)
+—
+—
+
+
+SentinelCodex/Vigilarity
+
+-overview-
+This is truly a general concept of a specific part of what could be a operating system.
+
+So this is a system, or protocol to be placed in whatever os.
+-
+
+This is a designated design of security for a platform.
+
+And it works in this way.
+
+
+-features-
+Write only storage.
+Logs for everything.
+No system protocol for tampering.
+Safe boot
+-/
+
+
+-write only storage
+The idea is that the main root for this system will take place in a seperate hardrive, so it has its own ruls, own gateways, and nothing else is stored on it.
+Projected size is about 4-8 (perhaps more) gigabytes.
+
+But the hard-drive only accepts write only, and even then, it is divided into its appropriate sections.
+
+Certain logs and files cannot be delete under any typical circumstances, and under no circumstances by anything on the operating system level.
+
+That means, even under root access certain logs and items cannot be tampered with.
+
+-logs for everything
+You can of course, interface.
+Traditionally,
+
+Logs are kept in specific files related to the operating system itself,
+Then installed applications and updates,
+And then user events.
+
+
+-user access
+So.
+There are 2, or maybe 3 ways of accessing that system.
+
+The level 1 is through a ultra safe-boot, which utilizes a perhaps physical switch to switch over to a firmware partition in the dedicated hard drive to boot the system into its firmware.
+
+Besides being a recovery partition, it allows complete (or semi) access to the V1D1ERE protocol, allowing you to delete, modify, items and settings.
+
+To note, no part of the standard operating system is invoked upon startup, and may only be interfaced by ‘read/write’ inside V1D1ERE.
+
+And of course when such a request is made, all of the hard-rive is made into read-only, perhaps albeit a small target running partition, or truthfully ram itself.
+
+Allowing you to make changes to the standard hard drive while your current OS is entirely invulnerable. (And no, no copying over into the V1D1ERE unless under very certain and special circumstances)
+
+—level 2
+Pre-startup, or a traditional safe mode
+
+
+—level 3
+A command prompt,
+When invoked it locks down the system, making certain partitions or areas ‘read-only’ (if possible, basically freezing them),
+Copies the flash software into ram (or cache hard-drive folder)
+Shuts down everything except trusted services (or perhaps kills everything and reinvokes)
+
+Invokes terminal.
+
+Nothing is allowed outside the terminal, so nothing moves without its api being visible and approved.
+
+Features of this, called, something. Sentinel Protocol
+—
+Manipulate files, scan for viruses.
+Log viewer of major events and network details.
+Kill, trace, services and executables.
+Troubleshooter, error diagnostics (related to logs)

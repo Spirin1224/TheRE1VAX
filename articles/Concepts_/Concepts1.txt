@@ -1,0 +1,152 @@
+Concepts1 - TTC0RE
+— writing
+
+
+This is a list of concepts, their meaning, usefulness, and implementation.
+
+
+—defensive design—
+This is a concept first written in my system fundamentals note.
+
+Defensive design means instead of exception, all operations are dependent on a set number of variables.
+
+So instead of worrying about the countless variables that could wreck a operation,
+Quota the necessary status of operations, or states, (variables) that are needed to complete the operation.
+
+The tighter such a system works, 
+Or rather,
+The more and well thought out the neccesary variables are, the higher stability the system becomes.
+
+[ -example
+Let us say a operation needs 3 state variables (variable 1, variable2, variable 3) from relevant areas of a system for a function to work (known as a protocol),
+
+Instead of simply saying,
+“These 3 work, then it should work”, (is correct)
+
+If we go deeper and quantify the state of those 3 variables being the correct one,
+For instance.
+
+“Variable 1 needs v1a and v1b to be correct”,
+And “Variable 2 needs variable 1 and v1b to be correct”
+
+We can quantify the things needed to make sure a system works, by establishing the variables that all affect the system/protocol,
+
+Thus, stability is increased,
+Why?
+Because establishing a system that relates to each other correctly, allows us to build it ‘tighter’, and possibly that there would be no outside variables that cannot be controlled.
+
+It allows us to have better control of the variables, thus increasing stability and efficiency.
+] -/example
+
+
+—offensive defensive
+Similar concept,
+That you build towards things you need, instead of things you cant control.
+
+Learning to do ‘with’ and not ‘without’.
+
+Thus, offensive defensive.
+
+You can have a super tight offense that is ‘defensive’ thanks to such a concept,
+That you can work at peak efficiency since your offense is based upon a closed system, thus defensive.
+
+A defensive system, a stable one, not open to outside attack or ‘variables’, allows it to work tighter.
+
+And since the offensive is based upon the defensive system, its effectiveness is based upon the efficiency or effectiveness of the defensive system,
+
+And since it is ‘defensive’ it is under your control,
+Or rather, you have more control over it, allowing it to better handle ‘uncaught exemptions’, variables, or attacks (depending on context).
+
+Thus effectiveness (offense) based upon self-sufficiency (defense)
+—/offensive defense
+
+
+
+—redundancy—
+Redundancy, a popular word in systems relating to stability.
+
+Redundancy basically means (in my personal interpreted form),
+Shared, or backup ‘state’ so that when something corrupts you have correct ‘state’ accessible to restore system information, variables, or ‘state’.
+
+—
+
+Here is my opinion.
+
+Redundancy breeds inefficiency.
+
+—
+
+Why?
+Backups are not wrong,
+And they should most definitely be a protocol in a system,
+But building a system based upon protocols for redundancy,
+(Redundant protocols (XD)),
+
+Make the system complicated, and instead of having many backups,
+You have many opportunities for things to go awry,
+
+If a single slipup happens in a redundancy protocol, the redundant copies can become corrupted, and thus scouring the system for the correct redundancy, and the incorrect ones.
+
+And of course, since it is possible a ‘redudantly based system’ will use either a read or write for the redundancy protocol, its possible to be pulling corrupt redundant states and corrupting a ‘retrieval of a backup’.
+
+So having in ‘state’ of a system possible mix-ups of correct and corrupted redundancy makes it difficult to find, fix, and generally take extra time to accomplish protocols, or functions of the system.
+
+Even the making of redundant information takes time.
+
+And even a way a system calls for information,
+Should it always call for the redundant copy?
+
+(
+Since a redundant is usually made in-case a protocol fails, or in a change.
+Like backup up a file before changing it, in-case it breaks
+)
+
+And this the dilemma,
+
+You could have redundant everywhere,
+Eventually have a practically duplicate system inside itself,
+Taking twice the space, and perhaps using half/twice the time! (Read and writes of redundant copies of each systems/written variable, operation, operation-result, etc...)
+
+[
+Basically, when a system accomplishes a result, it writes result to the next part of the protocol (obviously, it does the system) and then writes same thing to the redundant area/part of system
+
+Thus 2 writes for a single result. (Or maybe more! Like a ‘before’ and ‘after’ state of a simple completed operation in-case the variable changes the protocol itself (self-referring change))
+]
+
+—
+
+So a balance is needed, or rather, a better design.
+
+—
+
+Windows, btw, is notorious for their confusing, and often unstable ‘stable=goal’ or redundancy protocols.
+(IE: backup windows version, drivers, etc...)
+
+
+—TTC0RE’s Redundant Design
+In this case, i am going to be desiging a operating system, and i will be contrasting (‘interpreted’ windows features, OSX, etc...)
+
+Imho,
+Redundancy should only be created once,
+And that everything should be modular.
+
+The redundancy ‘area’ or ‘system’, ‘application’, or ‘environment’ should be unbiased and set apart from the system.
+
+(
+Difference in having something built in, and another to have it linked by linked integration
+-
+Or rather.
+
+A application doesn’t use a redundancy protocol into itself or under its umbrella (in its protocl, resoucrs, or environment), it writes it to the separate area/environment.
+)
+
+So.
+
+A system level 2 integration, so that it works on the actual ‘implementation’ api,
+
+Or rather, its a service all applications can invoke and use integrated into theirnworkflows.
+
+So that a application will write to its designated folder in its redundancy.
+
+-redundancy environment/protocol
+

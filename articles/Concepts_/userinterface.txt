@@ -1,0 +1,9 @@
+UserInterface
+—to write
+
+Yes, sure in software, but also in website design is this a useful element.
+
+The following are personal general concepts or guidelines when designing a user interface.
+
+—learning curve
+I personally think it is better to have a net harder interface to learn, but have the benefits of speed and efficiency trump, hard-clamped ‘easy’ access.
