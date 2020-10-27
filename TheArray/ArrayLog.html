@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="ArrayLog.css">
+ <title>Array Log for Past Events</title></head>
+
+<input type="checkbox" id="DarkModeSwitch" name="DarkModeButton" onclick="setDarkModeState()"><label for="DarkModeSwitch" class="DarkModeButton"></label>
+
+<div class="articlemain"><div class="article">
+
+<h2>This is the initial. 10-27-2020</h2>
+<p>None
+</p>
+
+</div></div>
+
+<script>
+document.getElementById("result0").innerHTML = localStorage.getItem("DarkModeState");
+if (localStorage.getItem("DarkModeState") === "false") {var state = 0;} else {var state = 1};
+document.getElementById("DarkModeSwitch").checked = state;
+document.getElementById("result1").innerHTML = state;
+function setDarkModeState() {var statefloat = document.getElementById("DarkModeSwitch").checked;localStorage.setItem("DarkModeState", statefloat);}
+</script>
+</html>
