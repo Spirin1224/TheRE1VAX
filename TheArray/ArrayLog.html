@@ -14,10 +14,11 @@
 </div></div>
 
 <script>
-document.getElementById("result0").innerHTML = localStorage.getItem("DarkModeState");
-if (localStorage.getItem("DarkModeState") === "false") {var state = 0;} else {var state = 1};
-document.getElementById("DarkModeSwitch").checked = state;
-document.getElementById("result1").innerHTML = state;
-function setDarkModeState() {var statefloat = document.getElementById("DarkModeSwitch").checked;localStorage.setItem("DarkModeState", statefloat);}
+if (localStorage.getItem("DarkModeState") == "true") {
+document.getElementById("DarkModeSwitch").checked = 1;} else {document.getElementById("DarkModeSwitch").checked = 0};
+
+function setDarkModeState() {
+localStorage.DarkModeState = document.getElementById("DarkModeSwitch").checked;
+}
 </script>
 </html>
