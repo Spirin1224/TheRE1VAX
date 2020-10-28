@@ -8,7 +8,10 @@
 html, body {margin: 0;}
 
 .articlemain {position: absolute;width: 100%; height: 100%;
-background-color: #ECEDE9;color: #00293d;transition-duration: 1.2s;}
+background-color: #ECEDE9;color: #00293d;transition-duration: 1.2s;
+-ms-overflow-style: none;scrollbar-width: none; overflow-y: scroll;}
+
+.articlemain::-webkit-scrollbar {display: none;}
 
 .article {align-content: center;margin: 0% 15% 0% 15%; font-size: 180%; line-height: 48px;font-family: 'Montserrat', sans-serif;
 animation: FadeIn 1s forwards;}
@@ -33,6 +36,8 @@ margin: 5px; border: solid #00293d; border-radius: 100%; background-color: #ECED
 <p>Expect some more updates to the main screen, perhaps more formatting, and hopefully some sort of fix for the selection buttons. Hoping to make them (when hovering) 'focus' (be larger) both directions vertically, and not just down.</p>
 <p>BONUS! Imported Montserrat, so everyone can see what I see</p>
 <p> Bonus #2 Having css in the document instead of resourcing it (in head(er) part of the html), results in faster processing. And speaking of speed, loading is cleaner in Google Chrome and not Firefox (at least not mine).</p>
+<p> Made scrollbar invisible!! </p>
+<p>to do: Expand formatting in this to a better font-size, allow list formats, (with smaller font sizes). And add Montserat to the rest of the website, since default font is not that pretty.</p>
 <br>
 
 <h2>This is the initial. 10-27-2020</h2>
