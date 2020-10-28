@@ -5,7 +5,7 @@
 
 <input type="checkbox" id="DarkModeSwitch" name="DarkModeButton" onclick="setDarkModeState()"><label for="DarkModeSwitch" class="DarkModeButton"></label>
 
-<div class="articlemain"><div class="article">
+<div id="ArticleMain" class="articlemain"><div class="article">
 
 <h2>This is the initial. 10-27-2020</h2>
 <p>Initialized "TheArray_Log", updated the main page for "spirin1224.github.io", added some things, cleaned code for the 'article main'. etc...
@@ -13,12 +13,18 @@
 
 </div></div>
 
-<script>
-if (localStorage.getItem("DarkModeState") == "true") {
-document.getElementById("DarkModeSwitch").checked = 1;} else {document.getElementById("DarkModeSwitch").checked = 0};
 
-function setDarkModeState() {
-localStorage.DarkModeState = document.getElementById("DarkModeSwitch").checked;
+<div>sa</div>
+</html>
+<script>
+UpdateDarkMode();
+function UpdateDarkMode() {
+if (localStorage.DarkMode === "true") {document.getElementById("ArticleMain").style.backgroundColor = "#00293d"; document.getElementById("ArticleMain").style.color = "#ECEDE9";} else {document.getElementById("ArticleMain").style.backgroundColor = "#ECEDE9"; document.getElementById("ArticleMain").style.color = "#00293d";};
+}
+
+function DARKMODETOGGLE() {
+var x = localStorage.DarkMode; if (x === "false") {x = "true";} else {x = "false";};
+localStorage.DarkMode = x;
+UpdateDarkMode()
 }
 </script>
-</html>
