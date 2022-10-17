@@ -5,168 +5,139 @@
 /* Montserrate Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+height: 100%;
+margin: 0;
+padding: 0;
 font-family: 'Montserrat', sans-serif;
 -ms-overflow-style: none;scrollbar-width: none;
 }
 
-a:hover, a:visited, a:link, a:active {
-text-decoration: none;
-color:black;
+a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
+
+.RendersWrapper, .GuideList, .ShipList, .EA, .lightbox, .wrapper, .ITMimg {height:100%;}
+
+.GuideList {position: static;width: 100%;}
+
+body {animation: spin 10s infinite;
 }
-
-.RendersWrapper {
-height:100%;
-}
-
-
-.GuideList {
-background-color: #00283c;
-flex:1;
-height: 100%;
-border-right: 2px solid grey;
-width: 100%;
-}
-
-.RenderGallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-height: 100%;
+@keyframes spin {
+0% {background-color: #cad5de; }
+50% {background-color: white; }
+100% {background-color: #cad5de; }
 }
 
 
-.ITM {
-height:20%;width:20%;
-color: #00283c;
-transition: .2s ease-in-out;
-margin: .5%;
-}
+.ShipList {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; }
+
+
+.TitleDiv, .InfoDiv {width: 100%; font-size: 8em;text-align: center;color: #48BDE0;}
+
+.InfoDiv {font-size: 2em;white-space:pre-line;text-align: left;margin-left: 20%;}
+
+.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%;}
 .ITM:hover {height:22%;width:22%;}
 
-.ITMimg {
-position:relative;
-height: 100%;
-width: 100%;
-border-radius: .5rem .5rem 0% 0%;
-background-size: cover;
-opacity: 100%;
-}
+.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
 
 /* Images */
-.img1 {background-image: url("ships/Marten.png");}
-.img2 {background-image: url("ships/Spike.png");}
-.img3 {background-image: url("ships/Kirishima.png");}
-.img4 {background-image: url("ships/Protazan.png");}
-.img5 {background-image: url("ships/Relic.png");}
-.img6 {background-image: url("ships/Tyrant.png");}
-.img7 {background-image: url("ships/Singularity.png");}
-.img8 {background-image: url("ships/Vigilant.png");}
-.img9 {background-image: url("ships/Kusarigama.png");}
+.img1 {background-image: url("ships/Marten.png");background-position-y:10%;}
+.img2 {background-image: url("ships/Spike.png");background-position-y:25%;}
+.img3 {background-image: url("ships/Kirishima.png");background-position-y:40%;}
+.img4 {background-image: url("ships/Protazan.png");background-position-y:-20%;}
+.img5 {background-image: url("ships/Relic.png");background-position-y:0%;}
+.img6 {background-image: url("ships/Tyrant.png");background-position-y:10%;}
+.img7 {background-image: url("ships/Singularity.png");background-position-y:45%;}
+.img8 {background-image: url("ships/Vigilant.png");background-position-y:0%;}
+.img9 {background-image: url("ships/Kusarigama.png");background-position-y:60%;}
 
 .caption {
 position:relative;
-background-color: #3A5361;
-border-radius: 0% 0% .5rem .5rem;
-color: #ecece8;
+background-color: #48bde0;
+color: #feffff;
 text-align:center;
 font-size:120%;
+padding: 1%;
+border-radius: 0% 0% .5rem .5rem;
 }
 
-.caption a {text-decoration: none;}
-
-
-.img {
+.img, .ITMImage, .imgi {
 position: static;
 max-width: 100%;
 height:auto;
 background-size: contain;
 background-repeat: no-repeat;
 background-position: center center;
-background-color: clear;
 z-index:2;
-background-color:green;
 }
 
 .ITMContent {
 display: inline-block;
 font-size: 200%;
 color:white;
-background-color: rgba(0, 0, 0, 0.5);
-padding: 1%;
-border-radius:2%/5%;
-margin:1% 4% 3% 4%;
+background-color: rgba(24, 60, 70, 0.60);
+padding: 1.5%;
+border-radius:1em/1em;
+margin:2% 2% 6% 2%;
 white-space:pre-line;
 }
 
-.ITMImage {
-position:static;
-display:block;
-max-width: 100%;
-height:auto;
-background-size: contain;
-background-repeat: no-repeat;
-background-color: clear;
-z-index:2;
+.ITMImage {display:flex;z-index: +10;align-self: center;transition: .1s, forwards;transition-timing-function: ease-in-out;
+border-color: #48BDE0;
+border-width: 0em;
+border-style: solid;
+border-radius:1em/1em;
+background-color: black;
+padding: .5em;
+width: 94%;
 }
 
-
-
-.EA {
-position:fixed;
-width:100%;
-height:100%;
-display:none;
-z-index: 20;
-background-color:clear;
-top:0;
+.ITMImage:hover{
+scale: 99%;
+border-width: .8em;
+border-radius:1em/1em;
+padding: 0em;
 }
 
-.lightbox {
-display:block;
-position:absolute;
-top:0;
-z-index: -1;
-width: 100%;
-height: 100%;
-background-color:clear;
+.EA, .lightbox {top:1%;width:100%;}
+
+.EA {position:fixed; 
+opacity: 0%;
+transition: .4s;
+transition-timing-function: cubic-bezier(0, .93, .58, 1);
+transform: translate(0px, +40px);
+visibility: hidden;
 }
+
+.lightbox {display:block; position:absolute;}
+
+.wrapper > a {display: contents;}
 
 .wrapper {
-position: relative;
+position: relative;width:60%;
+display: flex; flex-direction: column;
+top: 50%; left: 50%; transform: translate(-50%, -50%);
 background-color: rgba(0, 0, 0, 0.6);
-z-index: 9;
-width:60%;
-height:100%;
-overflow-y: scroll !important;
-scrollbar-width: none;
-top: 50%;  
-left: 50%; 
-transform: translate(-50%, -50%);
-padding:1%;
-margin-top:1%;
-margin-bottom:5%;
-border-radius:1%/2%;
+overflow-y: scroll !important; scrollbar-width: none;
+padding:1%; margin-top:1%; margin-bottom:5%; border-radius:1%/2%;
 }
-
 
 .EA:target {
-display: flex;
-animation: FadeIn 1s forwards;
+visibility: visible;
+opacity: 100%;
+transform: translate(0px);
 }
-@keyframes FadeIn {0%{opacity: 0%; transform: translate(0px, +40px);}20% {opacity: 0%; transform: translate(0px, +12px);}100% {opacity: 100%; transform: translate(0px);} }
 
 
 </style>
 
+
+
+<div id="Info" class="TitleDiv">TheRE1VAX Guide to Star Conflict Ships</div>
+
 <div class="GuideList">
-<div id="RenderGallery" class="RenderGallery">
+
+<div id="ShipList" class="ShipList">
 
 <a href="#Marten" class="ITM"><div class="ITMimg img1" alt="Render 1"></div><div class="caption">Marten</div></a>
 <a href="#Spike" class="ITM"><div class="ITMimg img2" alt="Render 1"></div><div class="caption">Spike</div></a>
@@ -177,11 +148,17 @@ animation: FadeIn 1s forwards;
 <a href="#Singularity" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Singularity</div></a>
 <a href="#Vigilant" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">Vigilant</div></a>
 <a href="#Kusarigama" class="ITM"><div class="ITMimg img9" alt="Render 1"></div><div class="caption">Kusarigama</div></a>
+<a href="#AntiZetaGuide" class="ITM"><div class="ITMimg" alt="Render 1"></div><div class="caption">Fighting Zeta's</div></a>
 </div>
 </div>
 
-<div id="Marten" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/MartenBuild.png" alt="Marten Build" class="ITMImage" href=""></img>
+
+<!-- Articles -->
+	<!-- ########## -->
+	<!-- Marten -->
+	<!-- ########## -->
+<div id="Marten" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/Marten.png"><img id="none" src="ships/MartenBuild.png" alt="Marten Build" class="ITMImage" href="https://hi.com"></img></a>
 <div class="ITMContent">
 Marten is my favorite ship in the game.
 Tactics and Thoughts:
@@ -195,9 +172,12 @@ Slowing Missiles and Mines
 Cloak + Hologram = True decoy.
 </div></div></div>
 
-<div id="Spike" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/SpikeBuild.png" alt="Spike Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+
+	<!-- ########## -->
+	<!-- Spike -->
+	<!-- ########## -->
+<div id="Spike" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<img id="none" src="ships/SpikeBuild.png" alt="Spike Build" class="ITMImage" href=""></img><div class="ITMContent">
 Spike:
 Quick Tactics, Thoughts and Strategies:
 
@@ -220,9 +200,8 @@ OTC, WNJ/EBM/Dagger, AC, Shield/Hull/Quantum
 	<!-- ########## -->
 	<!-- KIRISHIMA -->
 	<!-- ########## -->
-<div id="Kirishima" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/KirishimaBuild.png" alt="Kirishima Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Kirishima" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/KirishimaBuild.png" style="display: contents"><img id="none" src="ships/KirishimaBuild.png" alt="Kirishima Build" class="ITMImage" href=""></img></a><div class="ITMContent">
 Kirishima SH/\RP Guide - TheRE1VAX
 —
 
@@ -288,6 +267,8 @@ I keep shield booster for obvious reasons.
 And that’s it. Kirishima SH/\RP.
 Close range ally defense.
 Long range offense firepower.
+
+/
 </div></div></div>
 
 
@@ -295,10 +276,19 @@ Long range offense firepower.
 	<!-- ########## -->
 	<!-- Protazan -->
 	<!-- ########## -->
-<div id="Protazan" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/ProtazanBuild.png" alt="Protazan Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Protazan" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/ProtazanBuild.png"><img id="none" src="ships/ProtazanBuild.png" alt="Protazan Build" class="ITMImage" href=""></img></a><div class="ITMContent">
 Protazan - 'VALENCE'
+
+Think of 'VALENCE' like a mini Relic. Pot shots at fighters and interceptors. Good at long-medium range.
+
+Valence boasts high effectivness vs (again), fighters, interceptors, and frigates. Pirate Cannon allows high effectiveness for in-field use, and this is especially true using Prota unique mod.
+
+And for anything that needs more help, finish with Storm-D. Jump and cloak at your disposal to keep yourself in the right position, getting in range of enemies, and out of range of their attention. Multiphase allows tanking of damage while you hopefully jump to a safer place.
+
+Quick Tips:
+Strafing works well in this ship, use it to help leading shots. (as well as rolling of course).
+Keep an eye on range.
 </div></div></div>
 
 
@@ -306,14 +296,13 @@ Protazan - 'VALENCE'
 	<!-- ########## -->
 	<!-- Relic -->
 	<!-- ########## -->
-<div id="Relic" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/RelicBuild.png" alt="Relic Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Relic" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/RelicBuild.png"><img id="none" src="ships/RelicBuild.png" alt="Relic Build" class="ITMImage" href=""></img></a><div class="ITMContent">
 "Variacent" -- Relic, R17, Jericho Destroyer
 
 Primary Function:: Long Range Blockade/Support.
 
-For those that don't know or understand Relic, it is a adept Jericho destroyer.
+For those that don't know or understand Relic, it is an adept Jericho destroyer.
 Its primarily built for defense and has high effectiveness vs long range slow targets.
 
 Which any destroyer is good against, which makes Relic default loadout kind of niche.
@@ -325,7 +314,7 @@ Forward: Relic - The most defensive destroyer.
 --
 
 [SpecMod] Reflecting Shield.
-Everyone knows it, knows what it does. Makes outside non piercing projectiles bounce back to enemy, gives 400shields resists internally.(when active).
+Everyone knows what it does. Makes a large shield outside of the ship that bounces non piercing projectiles back to enemy and gives 400shields resists internally when active.
 
 This is what makes the Relic quite defendable, especially against other destroyers such as Zeta Pburster or Emperor (and of course many others). It highly discourages focus fire and can effectively float over high alpha attacks at medium range+.
 
@@ -354,9 +343,8 @@ While reflecting shield, high shield resistance and regen allow this to tank a l
 	<!-- ########## -->
 	<!-- TYRANT -->
 	<!-- ########## -->
-<div id="Tyrant" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/TyrantBuild.png" alt="Tyrant Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Tyrant" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/TyrantBuild.png"><img id="none" src="ships/TyrantBuild.png" alt="Tyrant Build" class="ITMImage" href=""></img></a><div class="ITMContent">
 Tyrant Destroyer Advanced Guide
 -TheRE1\/-\><
 
@@ -373,7 +361,7 @@ This guide is a advanced tactics and strategy guide for Tyrant. It covers primar
 
 Tyrant.
 A name that impresses all players from the moment they hear it to the moment they see it.
-Especially in more classic Star Conflict PVP the Tyrant was a destroyer to be feared. When in the hands of those who knew and loved it like no one else, it truly played and lived up to its name -- a Tyrant.
+Especially in more classic Star Conflict PVP the Tyrant was a destroyer to be feared. When in the hands of dedicated players, it truly played and lived up to its name -- a Tyrant.
 
 This Jericho destroyer offers interesting gameplay abilities and tactics, rewarding skill, a tactical mind, timing, and strategy from the build, to the field.
 
@@ -525,12 +513,18 @@ Quick note. What if I traded proj speed for an extra 30% crit damage?
 
 This is where personal preference can come more into play. Different playstyles, range builds, combinations and much more can vary.
 
-And while the community will undoubtedly reccommend a end-all be-all 'META' build, I've had success doing things myself to my preference. Sometimes that leads to the exact same 'META' build, and sometimes its slightly different, sometimes its absolutley different. What is important is what is comfortable and what works for you. Often what you are more comfortable or are better at using can offset or even go higher than the 'META' build (if one truly exists).
+And while the community will undoubtedly reccommend a end-all be-all 'META' build, 
+
+I've had success doing things differently, often to my preference. 
+
+Sometimes that leads to the exact same 'META' build, and sometimes its slightly different, sometimes its absolutely different. 
+
+<i>What is important is what is comfortable and what works for you. Often what you are more comfortable or are better at using can offset or even go higher than the 'META' build (if one truly exists).</i>
 
 [[This will be copy and pasted for the Ship Build section mind you.]]
 
 
-With stated, let's get into some module ideas, strategies, concepts, and considerations.
+With that stated, let's get into some module ideas, strategies, concepts, and considerations.
 
 -
 -
@@ -579,7 +573,7 @@ It also counts as a multipurpose module, so it is helpful for clearing debuffs.(
 -Photon Emitter
 Cited as a 'must have' for all destroyers by the community.
 
-Nowadays, considering the pvp scene, I also tend to agree with them. It is certainly useful in a variety of situations, especially as the common meta is destroyers.
+Nowadays, considering the pvp scene, I also tend to agree with them. It is certainly useful in a variety of situations, especially as the common meta is other destroyers.
 
 It also has a unique synergy with Tyrant. You can fire it at a nearby object and damage yourself, which will charge your special module.
 
@@ -595,7 +589,7 @@ Repelling Beam:
 I personally like Repelling beam, because it keeps them at just the right range for my primaries. (has other uses also).
 
 Pyro:
-Another choice I liked for a while. it is surprisingly effective at orbiting inties and at medium ranges vs fighters. Close range against enemy dessies also can work rather well.
+Another choice I liked for a while. it is surprisingly effective at orbiting inties and at medium ranges vs fighters. Close range against enemy dessies can also work rather well.
 
 
 -
@@ -614,10 +608,6 @@ My personal favorite. Allows to soak up damage, make players flank you, among ot
 
 
 
-
-here we go.
-
-
 --
 -Playstyle
 --
@@ -625,14 +615,10 @@ here we go.
 How this works:
 I am going to describe some playstyle concepts and styles that Tyrant favors, and then my in-depth playstyle(s).
 
-
-
 --
---
-
 
 General Concepts(as an opinion).
-To a degreee, strategizing placement is essential to staying alive. Reading the map and making choices. Often deciding between where to apply damage, and what will also not put you in a sitatuon where you can't run and you won't live.
+To a degree, strategizing placement is essential to staying alive. Reading the map and making choices. Often deciding between where to apply damage, and what will also not put you in a sitatuon where you can't run and you won't live.
 
 -Tyrant Favor
 Tyrant favors close-mid range fighting. In this concept, rotation speed, accel, and top speed (in order of importance) help to make this strategy effective. Moving around enemy dessies, keeping Spec Mod active, and picking right time for your modules while spec passive steals from those destroyed in close range to you...
@@ -652,7 +638,7 @@ Close on offense, far on defense. I typically try and circle the border between 
 
 Also, always and I mean always moving. This helps to mitigate/deter any cov ops and such stalking you. And enables your adaptive shields.
 
-When it comes to fighting dessies, you have to either commit or toe the line to not get drained to death. Albireo has infinite lives, you do not. 3 dessies vs you at long range at sustained time = most likely death.
+When it comes to fighting dessies, you have to either commit or toe the line to not get drained to death. Albireo has infinite lives, you do not. 3 dessies vs you at long range at sustained time = most likely death. [[Remember: You are not Relic.]]
 
 You need to be close to get around shields, use spec mod, and spec active mod, and also spec passive mod.
 
@@ -670,7 +656,7 @@ It is certainly a hands-on ship.
 This completes the main guide.
 Tyrant may yet still have a place in this game (albiet in niche situations), but when it does it is both effective and thoroughly enjoyable.
 
-Hopefully this guide was either mildly informative or mildly entertaining. Thank you for reading to this point.
+<b> Hopefully this guide was either mildly informative or mildly entertaining. Thank you for reading to this point. </b>
 
 --
 --
@@ -680,7 +666,7 @@ About-Me:
 Im TheRE1VAX.
 
 Qualifications for making this guide:
-If you need qualifications at this point for this guide, chances are--anything I tell or show you won't be enough.
+If you still need qualifications at this point of the guide, chances are--anything I tell or show you won't be enough.
 
 Qualifications?
 -A long time player
@@ -700,9 +686,8 @@ Qualifications?
 	<!-- ########## -->
 	<!-- Singularity -->
 	<!-- ########## -->
-<div id="Singularity" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/SingularityBuild.png" alt="Protazan Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Singularity" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/SingularityBuild.png"><img id="none" src="ships/SingularityBuild.png" alt="Protazan Build" class="ITMImage" href="ships/SingularityBuild.png"></img></a><div class="ITMContent">
 
 Singularity is a underrated tackler.
 Able to be a highly reliable, and high consistent damage.
@@ -716,9 +701,8 @@ and it looks awesome.
 	<!-- ########## -->
 	<!-- Vigilant -->
 	<!-- ########## -->
-<div id="Vigilant" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/VigilantBuild.jpg" alt="Vigilant Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Vigilant" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/VigilantBuild.jpg"><img id="none" src="ships/VigilantBuild.jpg" alt="Vigilant Build" class="ITMImage" href=""></img></a><div class="ITMContent">
 'VIZIANT' - Vigilant, R14 Empire Suppressor Class Destroyer
 
 
@@ -750,7 +734,7 @@ This is a Laser range build, using thermal damage and mines to supply denial to 
 This build offers extreme damage to targets around 7km range.
 Very effective against fighters and frigates, can be effective vs interceptors (more so than typical destroyer weapons at range).
 
-However the effectiveness is dependent on being in one place, which is not good for defensive when being attacked. Thankfully VIZIANT has very high one-way survivabikity and high range, allowing it to stay out of the direct heat if the battle and augment ally position or deny an open area of space or even play beacon defense.
+However the effectiveness is dependent on being in one place, which is not good for defensive when being attacked. Thankfully VIZIANT has very high one-way survivability and high range, allowing it to stay out of the direct heat if the battle and augment ally position or deny an open area of space or even play beacon defense.
 
 
 Modules:
@@ -783,15 +767,14 @@ This provides you the ability to typically control a third of open airspace with
 	<!-- ########## -->
 	<!-- Kusarigama -->
 	<!-- ########## -->
-<div id="Kusarigama" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/KusarigamaBuild.png" alt="Protazan Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<div id="Kusarigama" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/KusarigamaBuild.png"><img id="none" src="ships/KusarigamaBuild.png" alt="Protazan Build" class="ITMImage" href=""></img></a><div class="ITMContent">
 
 Kusarigama
 SHRAPNEL
 
 This ship is very interesting.
-With my build or playstyle, i note three things.
+With my build or playstyle, I note three things.
 
 1. Extreme effectiveness vs Destroyers (obvious)
 2. easy to pick up kills
@@ -813,11 +796,29 @@ Its fine to slot, has niche uses, but you would be just fine with regular web.
 
 Only other thing, it works at ranges. Don't need a lock on, that can be quite useful.
 
+</div></div></div>
+
+
+<div id="AntiZetaGuide" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<img id="none" class="ITMImage" href=""></img><div class="ITMContent">
+
+Use Kusarigama. (XD, im kidding, more info to come! maybe.)
 
 
 </div></div></div>
 
+<!-- End of Articles -->
+</div>
+
+<div class="InfoDiv">
+To Do List
+* stuff ofc
+* update builds on Marten and Spike (to include EM Barrier)
+* update pictures of builds
+* ^^ convert all to .jpg (much much MUCH smaller = faster loading times.)
+* Write guide on Singularity
+* more stuff??
+* oh yeah, ADD A DARK MODE!!!
 
 
-	</div>
-
+</div>

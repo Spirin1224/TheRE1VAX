@@ -1,5 +1,0 @@
-half and half
-
-[ship builds] -- [player guides]
-
-clicking will maximize that space, making it stretch over the thing and show content.
