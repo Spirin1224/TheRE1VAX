@@ -27,3 +27,38 @@ transform: translate(0px, +40px);
 
 
 ///
+
+
+--
+list of balance changes -- Dreadnought
+
+
+===Ship Changes::
+Nevis [PTW]
+Increase short range PTW Damage by 15%
+
+Svarog [PTW]
+Increase PTW damage by 10%
+Increase PTW reload speed by 20%
+
+Akula Corvettes
+Fix primary weapons have broken aim.
+
+Oberon Artillery Cruiser
+Reduce PTW Activation cost
+T5 >> 9
+T4 >> 8
+T3 >> 7
+T2 >> 6
+T1 >> 5
+
+Increase T5 Stabia PTW from 60% > 70%
+(PTW Projectile Damage from 1750 >> 1870)
+
+
+===Module Changes::
+Rup Catalyst
+[Stabia Only] Reduce reload/switch to primaries >> .7s
+
+Stasis Ammo
+Ability to cancel early.
