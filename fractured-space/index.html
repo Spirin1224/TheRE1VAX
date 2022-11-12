@@ -5,167 +5,115 @@
 /* Montserrate Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html, body {height: 100%;margin: 0;padding: 0;
 font-family: 'Montserrat', sans-serif;
--ms-overflow-style: none;scrollbar-width: none;
-}
+-ms-overflow-style: none;scrollbar-width: none;}
 
-a:hover, a:visited, a:link, a:active {
-text-decoration: none;
-color:black;
-}
+a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
 
-.RendersWrapper {
-height:100%;
-}
+body {animation: spin 10s infinite;}
+@keyframes spin {0% {background-color: #cad5de; }50% {background-color: white; }100% {background-color: #cad5de; }}
 
-
-.GuideList {
-background-color: #00283c;
-flex:1;
-height: 100%;
-border-right: 2px solid grey;
-width: 100%;
-}
-
-.RenderGallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-height: 100%;
-}
-
-
-.ITM {
-height:20%;width:20%;
-color: #00283c;
-transition: .2s ease-in-out;
-margin: .5%;
-}
-.ITM:hover {height:22%;width:22%;}
-
-.ITMimg {
-position:relative;
-height: 100%;
-width: 100%;
-border-radius: .5rem .5rem 0% 0%;
-background-size: cover;
-opacity: 100%;
-}
 
 /* Images */
-.img1 {background-image: url("ships/Endeavor.png");}
-.img2 {background-image: url("ships/Watchman.png");}
-.img3 {background-image: url("ships/Aegis.png");}
-.img4 {background-image: url("ships/Basilisk.png");}
-.img5 {background-image: url("ships/Destroyer.png");}
-.img6 {background-image: url("ships/Colossus.png");}
-.img7 {background-image: url("ships/Overseer.png");}
-.img8 {background-image: url("ships/Furion.png");}
+.img1 {background-image: url("ships/Endeavor.png");background-position-y:10%;}
+.img2 {background-image: url("ships/Watchman.png");background-position-y:25%;}
+.img3 {background-image: url("ships/Destroyer.png");background-position-y:40%;}
+.img4 {background-image: url("ships/Aegis.png");background-position-y:-20%;}
+.img5 {background-image: url("ships/Basilisk.png");background-position-y:0%;}
+.img6 {background-image: url("ships/Colossus.png");background-position-y:10%;}
+.img7 {background-image: url("ships/Overseer.png");background-position-y:45%;}
+.img8 {background-image: url("ships/Furion.png");background-position-y:0%;}
+.img9 {background-image: url("ships/Furion.png");background-position-y:60%;}
+
+
+
+/* Guidelist */
+.RendersWrapper, .GuideList, .ShipList, .EA, .lightbox, .wrapper, .ITMimg {height:100%;}
+
+.GuideList {position: static;width: 100%;}
+
+.ShipList {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; }
+
+.TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
+
+.InfoDiv {font-size: 2em;white-space:pre-line;text-align:left;margin-left: 20%;}
+
+
+
+/* Guide Item - ITM and Caption */
+.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%;}
+.ITM:hover {height:22%;width:22%;}
+
+.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
+
+.img, .EA_Image {
+position: static;max-width: 100%;height:auto;
+background-size: contain;background-repeat: no-repeat;background-position: center center;
+z-index:2;
+}
 
 .caption {
 position:relative;
-background-color: #3A5361;
-border-radius: 0% 0% .5rem .5rem;
-color: #ecece8;
-text-align:center;
-font-size:120%;
-}
-
-.caption a {text-decoration: none;}
-
-
-.img {
-position: static;
-max-width: 100%;
-height:auto;
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center center;
-background-color: clear;
-z-index:2;
-background-color:green;
-}
-
-.ITMContent {
-display: inline-block;
-font-size: 200%;
-color:white;
-background-color: rgba(0, 0, 0, 0.5);
-padding: 1%;
-border-radius:2%/5%;
-margin:1% 4% 3% 4%;
-white-space: pre-line;
-}
-
-.ITMImage {
-position:static;
-display:block;
-max-width: 100%;
-height:auto;
-background-size: contain;
-background-repeat: no-repeat;
-background-color: clear;
-z-index:2;
+background-color: #48bde0;color: #feffff;
+text-align:center;font-size:120%;
+padding: 1%;border-radius: 0% 0% .5rem .5rem;
 }
 
 
+
+/* Embed_Article - EA, EA_Content, Lightbox, and Wrapper */
+.EA, .lightbox {top:0%;width:100%;}
 
 .EA {
 position:fixed;
-width:100%;
-height:100%;
-display:none;
-z-index: 20;
-background-color:clear;
-top:0;
+visibility: hidden;opacity: 0%;
+transition: .2s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
 }
+.EA:target {visibility: visible;opacity: 100%;background-color: rgba(0,0,0,.2);}
+.EA:target > .wrapper {transform: translate(0px, 0px);}
 
-.EA > a {
-display:block;
-position:absolute;
-top:0;
-z-index: -1;
-width: 100%;
-height: 100%;
-background-color:clear;
-}
+.lightbox {display:block; position:absolute;}
 
 .wrapper {
-position: relative;
+display: flex; flex-direction: column;
+width:75%;
+margin: auto;padding:1%; margin-top:.5%; margin-bottom:5%; border-radius:1%/2%;
 background-color: rgba(0, 0, 0, 0.6);
-z-index: 9;
-width:60%;
-height:100%;
-overflow-y: scroll !important;
-scrollbar-width: none;
-top: 50%;  
-left: 50%; 
-transform: translate(-50%, -50%);
-padding:1%;
-margin-top:1%;
-margin-bottom:5%;
-border-radius:1%/2%;
+overflow-y: scroll !important; scrollbar-width: none;
+transform: translate(0px, +4hh0px);
+transition: .4s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
 }
+.wrapper > a {display: contents;}
 
-
-.EA:target {
-display: flex;
-animation: FadeIn 1s forwards;
+.EA_Image {
+display:flex;align-self: center;
+background-color: black;
+border: 0em #48BDE0 solid;border-radius:1em/1em;
+padding: .5em;
+transition: .1s, forwards;transition-timing-function: ease-in-out;
+z-index: +10;
+max-width: 96%;max-height: 85%;flex: 1 0 100%;
 }
-@keyframes FadeIn {0%{opacity: 0%; transform: translate(0px, +40px);}20% {opacity: 0%; transform: translate(0px, +12px);}100% {opacity: 100%; transform: translate(0px);} }
+.EA_Image:hover{scale: 99%;border-width: .8em;border-radius:1em/1em;padding: 0em;}
+
+.EA_Content {
+display: inline-block;
+font-size: calc(1.5rem + .5vw);
+color:white;
+background-color: rgba(24, 60, 70, 0.60);
+padding: 1.5%;
+border-radius:1em/1em;
+margin:2% 2% 6% 2%;
+white-space:pre-line;
+}
 
 
 </style>
 
+
 <div class="GuideList">
-<div id="RenderGallery" class="RenderGallery">
+<div class="ShipList">
 
 <a href="#Endeavor" class="ITM"><div class="ITMimg img1" alt="Render 1"></div><div class="caption">Endeavor</div></a>
 <a href="#Watchman" class="ITM"><div class="ITMimg img2" alt="Render 1"></div><div class="caption">Watchman</div></a>
@@ -175,12 +123,13 @@ animation: FadeIn 1s forwards;
 <a href="#Colossus" class="ITM"><div class="ITMimg img6" alt="Render 1"></div><div class="caption">Colussus</div></a>
 <a href="#Overseer" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Overseer</div></a>
 <a href="#Furion" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">Furion</div></a>
+<a href="#OtherShips" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">OtherShips</div></a>
 </div>
 </div>
 
 
 <div id="Endeavor" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/Endeavor.png" alt="Marten Build" class="ITMImage" href=""></img><div class="ITMContent">
+<img id="none" src="ships/Endeavor.png" alt="Marten Build" class="EA_Image" href=""></img><div class="EA_Content">
 Endeavor
 
 --
@@ -216,7 +165,7 @@ hull, 7500
 
 
 <div id="Watchman" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/WatchmanCrew.png" alt="Spike Build" class="ITMImage" href=""></img><div class="ITMContent">
+<img id="none" src="ships/WatchmanCrew.png" alt="Spike Build" class="EA_Image" href=""></img><div class="EA_Content">
 Watchman -- USR [United Space Research]
 
 The sniper for USR, boasts very good damage for precise shots at extreme ranges.
@@ -261,14 +210,14 @@ In a team situation, this ship can be very good for defending a sector, and prep
 </div></div></div>
 
 <div id="Aegis" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/Aegis.png" alt="Aegis Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<img id="none" src="ships/Aegis.png" alt="Aegis Build" class="EA_Image" href=""></img>
+<div class="EA_Content">
 Good ship.
 </div></div></div>
 
 
-<div id="Basilisk" class="EA"><a href="#"></a><div class="wrapper"><img src="ships/Basilisk.png" class="ITMImage">
-<div class="ITMContent">
+<div id="Basilisk" class="EA"><a class="lightbox" href="#"></a><div class="wrapper"><img src="ships/Basilisk.png" class="EA_Image">
+<div class="EA_Content">
 ======Basilisk
 armored 744
 unarmored 1140
@@ -287,26 +236,401 @@ Aurelian?
 </div></div></div>
 
 <div id="Destroyer" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/Destroyer.png" alt="Relic Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<img id="none" src="ships/Destroyer.png" alt="Relic Build" class="EA_Image" href=""></img>
+<div class="EA_Content">
 A very good ship.
 </div></div></div>
 
 <div id="Colossus" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/Colossus.png" alt="Tyrant Build" class="ITMImage" href=""></img>
-<div class="ITMContent">More info
+<img id="none" src="ships/Colossus.png" alt="Tyrant Build" class="EA_Image" href=""></img>
+<div class="EA_Content">More info
 </div></div></div>
 
 <div id="Overseer" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/Overseer.png" alt="Protazan Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<img id="none" src="ships/Overseer.png" alt="Protazan Build" class="EA_Image" href=""></img>
+<div class="EA_Content">
 Random info
 </div></div></div>
 
 <div id="Furion" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
-<img id="none" src="ships/Furion.png" alt="Protazan Build" class="ITMImage" href=""></img>
-<div class="ITMContent">
+<img id="none" src="ships/Furion.png" alt="Protazan Build" class="EA_Image" href=""></img>
+<div class="EA_Content">
 ITS THE FURION!
+</div></div></div>
+
+<div id="OtherShips" class="EA"><a class="lightbox" href="#"></a><div class="wrapper">
+<img id="none" src="ships/Furion.png" alt="Protazan Build" class="EA_Image" href=""></img>
+<div class="EA_Content">
+
+Fractured Space:
+—
+
+Ships:
+Furion (plasma thrower)
+
+
+Gladiator (Heavy Class (Capital)):
+—
+Huge blindspots.
+
+It is angering when suddenly 3 of the enemy blink on-top and above and it becomes quite hard to aim.
+
+So.
+Keep you distance, and somehow, never stop moving. Cuz those idiots will swarm.
+However:
+Does very good damage.
+Pounds at medium range with good consistency (however, very hard to aim)
+
+Leviathan
+Reaper
+Overseer (sniper)
+Kepler
+
+
+
+Aegis:
+—
+Energy ship,
+Good at mid range, works best with team.
+Stick w/ team, go for module cooldowns, because you can spam that particle accelerator.
+
+Excels in combat, with decent speeds.
+Crew builds
+Build for module cooldown, jump spin-up, and turret aim.
+
+
+—
+Basilisk
+—
+
+Use plasma corroder.
+
+Crew notes:
+Build for the following.
+Damage reduction +
+module cooldown +++
+Turret travers +
+
+—gameplay
+Can team, and can solo medium combat ships.
+Key to winning is blasting a huge sum of damage, using corroders, and continued to orbit around enemy, using cover to mitigate attacks.
+Get behind cover, cloak, wait, redo,
+
+
+—
+Intercepter
+—
+Weak ship, cant win at more than one ship at a time.
+Very good vs enemies in team, but must stay out of range.
+
+
+
+--
+Ranger
+--
+
+Piece of crap.
+
+I was told ranger is the better sniper...
+if it is, it either 
+1. Certainly isnt offensivey
+or
+2. I simply play Watchman magnitudes better than Ranger.
+
+Longbow cannon is alright, but kinicky like a cheap joke. DPS spamming the trigger is almost never as useful as waiting.
+Damage it does is just kinda alright, and it isnt good for any sort of alpha strikes.
+Also, you can feel the hard cap at 20,000km, and the mines are neat-ish, but kinda go against the concept of sniping.
+
+True, the self heal is more op than I give it credit for, true because I didn't spam it like I should have.
+But if the mines and the slow debuff and self heal are what make it better because its more defensive?
+id have to seriously disagree.
+
+Watchman is a MUCH better sniper.
+For a multitude of reasons.
+
+1. Main weapon is just better.
+Not by much, but certainly enough.
+
+2. Corrode Drones are op.
+How are they not?, shred the armor of another enemy while engaging another. By the time you finish, the drones will have made the other enemy an easy target.
+Considering they have infinite range, and move instantly, they work fantastic for softening up far away large targets--heavies, such as Colossus or Destroyer.
+
+That ability is extremely helpful AND direclty impacts the effectiveness of Watchman.
+
+3. Secondary weapon
+the DPS isnt terribly significant, but it does mean you can fire anyone anywhere,
+and it does severely punish any enemy openly rushing you.
+
+4. Dispersal Shield
+With a good crew, the cooldown can be short. Instead of using it as a last ditch effort, consider using it during or right before engagements to ward off most of the damage. (Instead of waiting until your health is gone and you are outgunned.)
+
+--
+
+TLDR
+Whoever said Watchman is a better sniper is either...
+1. Lying
+2. Ignorant
+3. Can play it better than they can play Watchman
+
+Side by side the results are clear for themselves.
+
+Unless self-heal is what BREAKS this thing, im not buying that Ranger is a better sniper than Watchman.
+
+And even then, Ranger would only win based off of defense.
+
+Heck, maybe its better cuz its smaller and a tad more maneuverable.
+ ‭‭‭
+
+
+
+—
+Equalizer
+—
+Useful, must stay quick, has small health.
+Keep hitting enemies spam first module, upgrade damage.
+
+
+
+—
+Endeavor-
+—
+A tech of techs, makes turrets, does very good damage, dominates battlefield.
+Does very good damage, does better with a team.
+
+Play zone offense/defense. Use cover and orbit around cover, staying above or below battlefield, augmenting turrets and allied firepower.
+
+
+—
+Punisher
+—
+
+Very good damage ship.
+Shield is good for taking light damage.
+Has very good to moderate guns
+
+Stay at medium range and orbit one-side of the enemy, Plasma Orb and every solid round after that does improved damage.
+
+Can 1v1 a Destroyer.
+
+
+—
+Raven
+—
+
+Very very good damage ship,
+Can 1v1 anything anywhere.
+
+Anytime.
+
+Gameplay:
+Move! And get as much energy as you can.
+Use obstacles and strafe, DO NOT GET CLOSE TO ENEMIES!
+Use Absorb Energy to get Overcharge beam up and running.
+
+Overcharge Beam:
+Powerful hit beam, try and hit same spot on enemy (obviously)
+
+Energy Absorber:
+Fire a aimable charge, if the charge hits a enemy, you get their energy.
+This is the most important abilite in your aresenal.
+
+
+—
+Raider
+—
+Decent support ship, low armor.
+—
+Without understanding abilities you will die, as it is a rather flimsy ship.
+However.
+The following will get you huge damage,
+—
+
+You must be close for main weapons.
+Biggest damage is the following, MINES!
+Short-range blasts that deal VERY good damage (4k!!), + the scalpel and missiles, = ability to handle.
+
+Remember the following.
+Distance for gun is 10k (right below)
+Raider mines are 500m range, or right when a enemy is close to you (have them have to follow you through them), remember, 45s cooldown.
+Raider missiles! Dont forget them! 20second cooldown!
+
+
+
+
+Executioner -- Titan Defense Systems
+--Milspec useless
+
+Reasons:
+Primary has incredibly long charge time
+Primary has incredibly slow projectile speed
+Primary has short range
+Primary does lackluster damage on armored ships (~750)
+No secondary weapon
+No defense
+[Overdrive] finicky and also reduces damage by a marginal amount. Using it resets your current recharging weapon rate.
+[Chrono Blink] Never had a use for it really. (Sprint to enemy base, they show up, blink away?)
+
+Notes:
+Can do 3k(?) hits on unarmored targets.
+This boosted unarmored damage may make the ship effective in two scenarios.
+	1. With a dedicated team of ally ships that strip armor of enemies and slow them down
+	2. With team attacking a large target without being flanked.
+[Executioner Missiles] More useful than you think. Low reload time (15s), fast speed, good damage against unarmored adversaries.
+[Stasis Field Buoy] Does work, but you will most likely be too far away, and optimal effect time is very low. LONG recharge.
+
+
+
+
+Enforcer
+kinda good
+
+
+
+
+Venturer-
+Pretty Good -- A-
+
+
+Mining laser
+15k range (short)
+armored = 390-420dmg
+unarmored = 1000-1110dmg.
+
+[Plasma Missils]
+max armored = 1264 
+max unarmored = 1840
+
+Heal pulse
+1800 health
+
+
+[Shielding Buoy]
+45s duration
+120 recharge
+75s recharge after module end
+
+
+
+
+
+
+
+--Paladin
+[primary]
+armored 240
+unaromored 640 
+
+purge torpedo
+armored 222
+unarmored 585
+
+Plasma field
+MAX 1550
+
+Repair ballista
+max 144
+
+
+
+Dfense drones
+
+24s recharge if no losses
+
+
+
+======Centurion
+[Anti Material Cannon]
+5460 max damage per volley (counting armor destroy and mark target)
+
+
+Energy Overload
+2964
+
+
+
+======Leviathan
+Blink fighters = no real damage?, useful for clearing enemy fighters at target and maybe occuping PD?
+Charge Bombers = 2368
+
+
+
+======Aegis
+
+Absorb Smartcannon = 
+Armored = 370 full salvo
+Unarmored = 990 full salvo
+
+
+
+Particle Accelerator = ~2300 to collosus.
+
+
+
+
+
+======Basilisk
+armored 744
+unarmored 1140
+
+
+Pulsar charge] = 782
+
+
+Pulsar Charge + 4 anchors
+~3130 dmg
+
+// Timing: Shoot the pulsar charge. When it lands in a location and starts to spool then immediately fire all graviton anchors.
+
+
+======Equalizer
+
+
+
+
+
+======Raven
+
+
+
+
+
+======infiltrator
+
+
+
+[ion blast]
+387 damage base.
+1300???
+
+
+2758 x4
+
+
+
+
+
+
+======Raider
+armored = 500-540 (462 at longer 6.2km)
+unarmored = 1274-1323 (1k at 6.2km)
+
+
+
+Impact
+7km
+256 dmg each
+
+torpedo
+296
+
+
+
+
+======Pioneer
+Plasma Grav Nuke
+1057 damage
+
+
 </div></div></div>
 
 

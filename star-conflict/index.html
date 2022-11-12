@@ -5,40 +5,15 @@
 /* Montserrate Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-html, body {
-height: 100%;
-margin: 0;
-padding: 0;
+html, body {height: 100%;margin: 0;padding: 0;
 font-family: 'Montserrat', sans-serif;
--ms-overflow-style: none;scrollbar-width: none;
-}
+-ms-overflow-style: none;scrollbar-width: none;}
 
 a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
 
-.RendersWrapper, .GuideList, .ShipList, .EA, .lightbox, .wrapper, .ITMimg {height:100%;}
+body {animation: spin 10s infinite;}
+@keyframes spin {0% {background-color: #cad5de; }50% {background-color: white; }100% {background-color: #cad5de; }}
 
-.GuideList {position: static;width: 100%;}
-
-body {animation: spin 10s infinite;
-}
-@keyframes spin {
-0% {background-color: #cad5de; }
-50% {background-color: white; }
-100% {background-color: #cad5de; }
-}
-
-
-.ShipList {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; }
-
-
-.TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
-
-.InfoDiv {font-size: 2em;white-space:pre-line;text-align: left;margin-left: 20%;}
-
-.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%;}
-.ITM:hover {height:22%;width:22%;}
-
-.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
 
 /* Images */
 .img1 {background-image: url("ships/Marten.png");background-position-y:10%;}
@@ -51,27 +26,78 @@ body {animation: spin 10s infinite;
 .img8 {background-image: url("ships/Vigilant.png");background-position-y:0%;}
 .img9 {background-image: url("ships/Kusarigama.png");background-position-y:60%;}
 
-.caption {
-position:relative;
-background-color: #48bde0;
-color: #feffff;
-text-align:center;
-font-size:120%;
-padding: 1%;
-border-radius: 0% 0% .5rem .5rem;
-}
 
-.img, .ITMImage, .imgi {
-position: static;
-max-width: 100%;
-height:auto;
-background-size: contain;
-background-repeat: no-repeat;
-background-position: center center;
+
+/* Guidelist */
+.RendersWrapper, .GuideList, .ShipList, .EA, .lightbox, .wrapper, .ITMimg {height:100%;}
+
+.GuideList {position: static;width: 100%;}
+
+.ShipList {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; }
+
+.TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
+
+.InfoDiv {font-size: 2em;white-space:pre-line;text-align:left;margin-left: 20%;}
+
+
+
+/* Guide Item - ITM and Caption */
+.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%;}
+.ITM:hover {height:22%;width:22%;}
+
+.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
+
+.img, .EA_Image {
+position: static;max-width: 100%;height:auto;
+background-size: contain;background-repeat: no-repeat;background-position: center center;
 z-index:2;
 }
 
-.ITMContent {
+.caption {
+position:relative;
+background-color: #48bde0;color: #feffff;
+text-align:center;font-size:120%;
+padding: 1%;border-radius: 0% 0% .5rem .5rem;
+}
+
+
+
+/* Embed_Article - EA, EA_Content, Lightbox, and Wrapper */
+.EA, .lightbox {top:0%;width:100%;}
+
+.EA {
+position:fixed;
+visibility: hidden;opacity: 0%;
+transition: .2s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
+}
+.EA:target {visibility: visible;opacity: 100%;background-color: rgba(0,0,0,.2);}
+.EA:target > .wrapper {transform: translate(0px, 0px);}
+
+.lightbox {display:block; position:absolute;}
+
+.wrapper {
+display: flex; flex-direction: column;
+width:75%;
+margin: auto;padding:1%; margin-top:.5%; margin-bottom:5%; border-radius:1%/2%;
+background-color: rgba(0, 0, 0, 0.6);
+overflow-y: scroll !important; scrollbar-width: none;
+transform: translate(0px, +4hh0px);
+transition: .4s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
+}
+.wrapper > a {display: contents;}
+
+.EA_Image {
+display:flex;align-self: center;
+background-color: black;
+border: 0em #48BDE0 solid;border-radius:1em/1em;
+padding: .5em;
+transition: .1s, forwards;transition-timing-function: ease-in-out;
+z-index: +10;
+max-width: 96%;max-height: 88%;flex: 1 0 10%;
+}
+.EA_Image:hover{scale: 99%;border-width: .8em;border-radius:1em/1em;padding: 0em;}
+
+.EA_Content {
 display: inline-block;
 font-size: calc(1.5rem + .5vw);
 color:white;
@@ -82,87 +108,25 @@ margin:2% 2% 6% 2%;
 white-space:pre-line;
 }
 
-.ITMImage {display:flex;z-index: +10;align-self: center;transition: .1s, forwards;transition-timing-function: ease-in-out;
-border-color: #48BDE0;
-border-width: 0em;
-border-style: solid;
-border-radius:1em/1em;
-background-color: black;
-padding: .5em;
-width: 94%;
-}
-
-.ITMImage:hover{
-scale: 99%;
-border-width: .8em;
-border-radius:1em/1em;
-padding: 0em;
-}
-
-.EA, .lightbox {top:0%;width:100%;}
-
-.EA {position:fixed;
-opacity: 0%;
-transition: .2s;
-transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
-visibility: hidden;
-}
-
-.lightbox {display:block; position:absolute;}
-
-.wrapper > a {display: contents;}
-
-.wrapper {
-position: relative;
-margin: auto;
-
-width:calc(80% - 40vh);
-display: flex; flex-direction: column;
-transform: translate(0px, +40px);
-
-background-color: rgba(0, 0, 0, 0.6);
-overflow-y: scroll !important; scrollbar-width: none;
-padding:1%; margin-top:.5%; margin-bottom:5%; border-radius:1%/2%;
-
-transition: .4s;
-transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
-}
-
-.EA:target {
-visibility: visible;
-opacity: 100%;
-background-color: rgba(0,0,0,.2);
-}
-
-.EA:target > .wrapper {
-
-transform: translate(0px, 0px);
-
-}
-
 
 </style>
 
 
-
 <div id="Info" class="TitleDiv">TheRE1VAX Guide to Star Conflict Ships</div>
 
-<div class="GuideList">
-
-<div id="ShipList" class="ShipList">
-
-<a href="#Marten" class="ITM"><div class="ITMimg img1" alt="Render 1"></div><div class="caption">Marten</div></a>
-<a href="#Spike" class="ITM"><div class="ITMimg img2" alt="Render 1"></div><div class="caption">Spike</div></a>
-<a href="#Kirishima" class="ITM"><div class="ITMimg img3" alt="Render 1"></div><div class="caption">Kirishima</div></a>
-<a href="#Protazan" class="ITM"><div class="ITMimg img4" alt="Render 1"></div><div class="caption">Protazan</div></a>
-<a href="#Relic" class="ITM"><div class="ITMimg img5" alt="Render 1"></div><div class="caption">Relic</div></a>
-<a href="#Tyrant" class="ITM"><div class="ITMimg img6" alt="Render 1"></div><div class="caption">Tyrant</div></a>
-<a href="#Singularity" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Singularity</div></a>
-<a href="#Vigilant" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">Vigilant</div></a>
-<a href="#Kusarigama" class="ITM"><div class="ITMimg img9" alt="Render 1"></div><div class="caption">Kusarigama</div></a>
-<a href="#AntiZetaGuide" class="ITM"><div class="ITMimg" alt="Render 1"></div><div class="caption">Fighting Zeta's</div></a>
-</div>
-</div>
+<!-- Guide and Ship List -->
+<div class="GuideList"><div id="ShipList" class="ShipList">
+<a draggable="false" href="#Marten" class="ITM"><div class="ITMimg img1" alt="Render 1"></div><div class="caption">Marten</div></a>
+<a draggable="false" href="#Spike" class="ITM"><div class="ITMimg img2" alt="Render 1"></div><div class="caption">Spike</div></a>
+<a draggable="false" href="#Kirishima" class="ITM"><div class="ITMimg img3" alt="Render 1"></div><div class="caption">Kirishima</div></a>
+<a draggable="false" href="#Protazan" class="ITM"><div class="ITMimg img4" alt="Render 1"></div><div class="caption">Protazan</div></a>
+<a draggable="false" href="#Relic" class="ITM"><div class="ITMimg img5" alt="Render 1"></div><div class="caption">Relic</div></a>
+<a draggable="false" href="#Tyrant" class="ITM"><div class="ITMimg img6" alt="Render 1"></div><div class="caption">Tyrant</div></a>
+<a draggable="false" href="#Singularity" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Singularity</div></a>
+<a draggable="false" href="#Vigilant" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">Vigilant</div></a>
+<a draggable="false" href="#Kusarigama" class="ITM"><div class="ITMimg img9" alt="Render 1"></div><div class="caption">Kusarigama</div></a>
+<a draggable="false" href="#AntiZetaGuide" class="ITM"><div class="ITMimg" alt="Render 1"></div><div class="caption">Fighting Zeta's</div></a>
+</div></div>
 
 
 <!-- Articles -->
@@ -170,7 +134,7 @@ transform: translate(0px, 0px);
 	<!-- Marten -->
 	<!-- ########## -->
 <div id="Marten" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/Marten.png" target="_blank"><img src="ships/MartenBuild.png" alt="Marten Build" class="ITMImage" href="https://hi.com"></img></a><div class="ITMContent">
+<a href="ships/Marten.png" target="_blank"><img src="ships/MartenBuild.png" alt="Marten Build" class="EA_Image" href="https://hi.com"></img></a><div class="EA_Content">
 Marten is my favorite ship in the game.
 Tactics and Thoughts:
 Wormhole Stabilizer:
@@ -188,7 +152,7 @@ Cloak + Hologram = True decoy.
 	<!-- Spike -->
 	<!-- ########## -->
 <div id="Spike" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/SpikeBuild.jpg" target="_blank"><img src="ships/SpikeBuild.jpg" alt="Spike Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/SpikeBuild.jpg" target="_blank"><img src="ships/SpikeBuild.jpg" alt="Spike Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 Spike:
 Quick Tactics, Thoughts and Strategies:
 
@@ -212,7 +176,7 @@ OTC, WNJ/EBM/Dagger, AC, Shield/Hull/Quantum
 	<!-- KIRISHIMA -->
 	<!-- ########## -->
 <div id="Kirishima" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/KirishimaBuild.png" target="_blank"><img src="ships/KirishimaBuild.png" alt="Kirishima Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/KirishimaBuild.png" target="_blank"><img src="ships/KirishimaBuild.png" alt="Kirishima Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 Kirishima SH/\RP Guide - TheRE1VAX
 —
 
@@ -288,7 +252,7 @@ Long range offense firepower.
 	<!-- Protazan -->
 	<!-- ########## -->
 <div id="Protazan" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/ProtazanBuild.png" target="_blank"><img id="none" src="ships/ProtazanBuild.png" alt="Protazan Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/ProtazanBuild.png" target="_blank"><img id="none" src="ships/ProtazanBuild.png" alt="Protazan Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 Protazan - 'VALENCE'
 
 Think of 'VALENCE' like a mini Relic. Pot shots at fighters and interceptors. Good at long-medium range.
@@ -308,7 +272,7 @@ Keep an eye on range.
 	<!-- Relic -->
 	<!-- ########## -->
 <div id="Relic" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/RelicBuild.jpg" target="_blank"><img id="none" src="ships/RelicBuild.jpg" alt="Relic Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/RelicBuild.jpg" target="_blank"><img id="none" src="ships/RelicBuild.jpg" alt="Relic Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 "Variacent" -- Relic, R17, Jericho Destroyer
 
 Primary Function:: Long Range Blockade/Support.
@@ -355,7 +319,7 @@ While reflecting shield, high shield resistance and regen allow this to tank a l
 	<!-- TYRANT -->
 	<!-- ########## -->
 <div id="Tyrant" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/TyrantBuild.jpg" target="_blank"><img id="none" src="ships/TyrantBuild.jpg" alt="Tyrant Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/TyrantBuild.jpg" target="_blank"><img id="none" src="ships/TyrantBuild.jpg" alt="Tyrant Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 Tyrant Destroyer Advanced Guide
 -TheRE1\/-\><
 
@@ -698,7 +662,7 @@ Qualifications?
 	<!-- Singularity -->
 	<!-- ########## -->
 <div id="Singularity" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/SingularityBuild.png" target="_blank"><img id="none" src="ships/SingularityBuild.png" alt="Protazan Build" class="ITMImage" href="ships/SingularityBuild.png"></img></a><div class="ITMContent">
+<a href="ships/SingularityBuild.png" target="_blank"><img id="none" src="ships/SingularityBuild.png" alt="Protazan Build" class="EA_Image" href="ships/SingularityBuild.png"></img></a><div class="EA_Content">
 
 Singularity is a underrated tackler.
 Able to be a highly reliable, and high consistent damage.
@@ -713,7 +677,7 @@ and it looks awesome.
 	<!-- Vigilant -->
 	<!-- ########## -->
 <div id="Vigilant" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/VigilantBuild.jpg" target="_blank"><img id="none" src="ships/VigilantBuild.jpg" alt="Vigilant Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/VigilantBuild.jpg" target="_blank"><img id="none" src="ships/VigilantBuild.jpg" alt="Vigilant Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 'VIZIANT' - Vigilant, R14 Empire Suppressor Class Destroyer
 
 
@@ -779,7 +743,7 @@ This provides you the ability to typically control a third of open airspace with
 	<!-- Kusarigama -->
 	<!-- ########## -->
 <div id="Kusarigama" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<a href="ships/KusarigamaBuild.png" target="_blank"><img id="none" src="ships/KusarigamaBuild.png" alt="Protazan Build" class="ITMImage" href=""></img></a><div class="ITMContent">
+<a href="ships/KusarigamaBuild.png" target="_blank"><img id="none" src="ships/KusarigamaBuild.png" alt="Protazan Build" class="EA_Image" href=""></img></a><div class="EA_Content">
 
 Kusarigama
 SHRAPNEL
@@ -811,7 +775,7 @@ Only other thing, it works at ranges. Don't need a lock on, that can be quite us
 
 
 <div id="AntiZetaGuide" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
-<img id="none" class="ITMImage" href=""></img><div class="ITMContent">
+<img id="none" class="EA_Image" href=""></img><div class="EA_Content">
 
 Use Kusarigama. (XD, im kidding, more info to come! maybe.)
 
