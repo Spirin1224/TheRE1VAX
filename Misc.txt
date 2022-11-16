@@ -78,6 +78,18 @@ Remove arming time.
 Nukes for Dreadnought and Destroyers tier V only.
 Remove arming time.
 
+Rupture Ram V
+Consider reducing damage by 5-10% since its possible rupture applies before damage.
+--
+Consider lowering damage considerably, but increasing rupture debuff. This would better encourage its use distinct from plasma or blast.
+
+
+[Mechanic Changes?]
+Scale ram damage with speed
+-
+"This has been a suggestion from Draggommer and other elite rammers in the past
+Make it a little more skill expressive" - Polaris
+
 
 
 
