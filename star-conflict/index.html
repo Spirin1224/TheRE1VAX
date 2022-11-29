@@ -1,116 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Star Conflict - Ships and Guides</title>
-<style>
-/* Montserrate Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-html, body {height: 100%;margin: 0;padding: 0;
-font-family: 'Montserrat', sans-serif;
--ms-overflow-style: none;scrollbar-width: none;}
-
-a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
-
-body {animation: spin 10s infinite;}
-@keyframes spin {0% {background-color: #cad5de; }50% {background-color: white; }100% {background-color: #cad5de; }}
-
-
-/* Images */
-.img1 {background-image: url("ships/Marten.png");background-position-y:10%;}
-.img2 {background-image: url("ships/Spike.png");background-position-y:25%;}
-.img3 {background-image: url("ships/Kirishima.png");background-position-y:40%;}
-.img4 {background-image: url("ships/Protazan.png");background-position-y:-20%;}
-.img5 {background-image: url("ships/Relic.png");background-position-y:0%;}
-.img6 {background-image: url("ships/Tyrant.png");background-position-y:10%;}
-.img7 {background-image: url("ships/Singularity.png");background-position-y:45%;}
-.img8 {background-image: url("ships/Vigilant.png");background-position-y:0%;}
-.img9 {background-image: url("ships/Kusarigama.png");background-position-y:60%;}
-
-
-
-/* Guidelist */
-.RendersWrapper, .GuideList, .ShipList, .EA, .lightbox, .wrapper, .ITMimg {height:100%;}
-
-.GuideList {position: static;width: 100%;}
-
-.ShipList {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; }
-
-.TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
-
-.InfoDiv {font-size: 2em;white-space:pre-line;text-align:left;margin-left: 20%;}
-
-
-
-/* Guide Item - ITM and Caption */
-.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%;}
-.ITM:hover {height:22%;width:22%;}
-
-.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
-
-.img, .EA_Image {
-position: static;max-width: 100%;height:auto;
-background-size: contain;background-repeat: no-repeat;background-position: center center;
-z-index:2;
-}
-
-.caption {
-position:relative;
-background-color: #48bde0;color: #feffff;
-text-align:center;font-size:120%;
-padding: 1%;border-radius: 0% 0% .5rem .5rem;
-}
-
-
-
-/* Embed_Article - EA, EA_Content, Lightbox, and Wrapper */
-.EA, .lightbox {top:0%;width:100%;}
-
-.EA {
-position:fixed;
-visibility: hidden;opacity: 0%;
-transition: .2s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
-}
-.EA:target {visibility: visible;opacity: 100%;background-color: rgba(0,0,0,.2);}
-.EA:target > .wrapper {transform: translate(0px, 0px);}
-
-.lightbox {display:block; position:absolute;}
-
-.wrapper {
-display: flex; flex-direction: column;
-width:75%;
-margin: auto;padding:1%; margin-top:.5%; margin-bottom:5%; border-radius:1%/2%;
-background-color: rgba(0, 0, 0, 0.6);
-overflow-y: scroll !important; scrollbar-width: none;
-transform: translate(0px, +4hh0px);
-transition: .4s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
-}
-.wrapper > a {display: contents;}
-
-.EA_Image {
-display:flex;align-self: center;
-background-color: black;
-border: 0em #48BDE0 solid;border-radius:1em/1em;
-padding: .5em;
-transition: .1s, forwards;transition-timing-function: ease-in-out;
-z-index: +10;
-max-width: 96%;max-height: 88%;flex: 1 0 10%;
-}
-.EA_Image:hover{scale: 99%;border-width: .8em;border-radius:1em/1em;padding: 0em;}
-
-.EA_Content {
-display: inline-block;
-font-size: calc(1.5rem + .5vw);
-color:white;
-background-color: rgba(24, 60, 70, 0.60);
-padding: 1.5%;
-border-radius:1em/1em;
-margin:2% 2% 6% 2%;
-white-space:pre-line;
-}
-
-
-</style>
-
+<link rel="stylesheet" href="main.css">
+</head>
 
 <div id="Info" class="TitleDiv">TheRE1VAX Guide to Star Conflict Ships</div>
 
@@ -125,6 +18,8 @@ white-space:pre-line;
 <a draggable="false" href="#Singularity" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Singularity</div></a>
 <a draggable="false" href="#Vigilant" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">Vigilant</div></a>
 <a draggable="false" href="#Kusarigama" class="ITM"><div class="ITMimg img9" alt="Render 1"></div><div class="caption">Kusarigama</div></a>
+<a draggable="false" href="#Irbis" class="ITM"><div class="ITMimg img10" alt="Render 1"></div><div class="caption">Irbis</div></a>
+<a draggable="false" href="#WolfhoundIon" class="ITM"><div class="ITMimg img11" alt="Render 1"></div><div class="caption">Wolfhound</div></a>
 <a draggable="false" href="#AntiZetaGuide" class="ITM"><div class="ITMimg" alt="Render 1"></div><div class="caption">Fighting Zeta's</div></a>
 </div></div>
 
@@ -782,8 +677,80 @@ Use Kusarigama. (XD, im kidding, more info to come! maybe.)
 
 </div></div></div>
 
-<!-- End of Articles -->
+	<!-- ########## -->
+	<!-- Irbis -->
+	<!-- ########## -->
+<div id="Irbis" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+
+<a href="ships/IrbisBuild.jpg" target="_blank"><img id="none" src="ships/IrbisBuild.jpg" alt="Protazan Build" class="EA_Image" href="ships/IrbisBuild.jpg"></img></a>
+<div class="EA_Content">
+
+Irbis is the newest Federation tackler, and it is quite impressive.
+
+This is the *secret*^ Rails build, that isnt secret since I havent yet posted the regular build (with the special weapon).
+
+Make sure to lock on, and ofc tap.
+Aim assist is absolutely ridiculous in this. You will find high effectiveness vs interceptors,
+ive tracked down 2 albireos (in intie form) that were cloaked, and destroyed them both. First time ive ever done that (without using AOE or getting help).
+
+Don't underestimate cloak for attacking targets, and even using it to get around the map.
+Feel free to swap out a few modules if you need target painter and target inhibitor.
+
+^not secret, obviously.
+
+Oh and the crew is your guess atm cuz i cant be bothered to include it.
+
+</div></div></div>
+
+
+	<!-- ########## -->
+	<!-- Wolfhound -->
+	<!-- ########## -->
+<div id="WolfhoundIon" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<div class="SubArticleNav">
+<a href="#WolfhoundIon" class="SubArticle">Wolfhound Ion</a>
+<a href="#WolfhoundBubble" class="SubArticle">Wolfhound Bubble</a>
 </div>
+
+<a href="ships/WolfhoundIonBuild.jpg" target="_blank"><img id="none" src="ships/WolfhoundIonBuild.jpg" alt="Protazan Build" class="EA_Image" href="ships/WolfhoundIonBuild.jpg"></img></a><div class="EA_Content">
+
+Do you like Wolfhound?
+Do you like Lasers? (Preferably Ion Emitter)
+Do you like having fun even if you lose?
+Do you like high skill builds?
+
+Then this should be fun.
+
+It is pretty self explanatory.
+
+Notes:
+Know when to be say 3 clicks from fully zoomed in.
+(as in, fully zoom in, unclick the zoom, two more clicks (scroll wheel clicks) and thats about the optimum distance)*
+* of course, its individual and per resolutin.
+
+Just know that sitting closer on the ship helps with aiming, and ofc zoom out when orbiting (if thats also your thing).
+
+Thinking about a crit build with it, but ill come back to that later.
+</div></div></div>
+
+<div id="WolfhoundBubble" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<div class="SubArticleNav">
+<a href="#WolfhoundIon" class="SubArticle">Wolfhound Ion</a>
+<a href="#WolfhoundBubble" class="SubArticle">Wolfhound Bubble</a>
+</div>
+<a href="ships/IrbisBuild.jpg" target="_blank"><img id="none" src="ships/IrbisBuild.jpg" alt="Protazan Build" class="EA_Image" href="ships/IrbisBuild.jpg"></img></a><div class="EA_Content">
+
+Yeah, the stock pro bubble build is on its way.
+</div></div></div>
+
+<!-- End of Articles -->
+
+	<!-- ########## -->
+	<!-- TEMPLATE -->
+	<!-- ########## -->
+<div id="TEMPLATE" class="EA"><a class="lightbox" href="#ShipList"></a><div class="wrapper">
+<a href="ships/" target="_blank"><img id="none" src="ships/" alt="" class="EA_Image" href="ships/"></img></a><div class="EA_Content">
+</div></div></div>
 
 <div class="InfoDiv">
 To Do List
