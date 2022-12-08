@@ -272,3 +272,13 @@ Polaris
 + flechettes get missile speed buff
 + cat rup tightening reload to primaries.
 
+
+
+===
+
+
+
+
+
+
+

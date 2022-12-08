@@ -10,6 +10,10 @@ a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:bl
 body {animation: spin 10s infinite;}
 @keyframes spin {0% {background-color: #cad5de; }50% {background-color: white; }100% {background-color: #cad5de; }}
 
+:root {
+  --blue: #48bde0;
+  --white: #ffffff;
+}
 
 /* Images */
 .img1 {background-image: url("ships/Marten.png");background-position-y:10%;}
@@ -23,9 +27,9 @@ body {animation: spin 10s infinite;}
 .img9 {background-image: url("ships/Kusarigama.png");background-position-y:60%;}
 .img10 {background-image: url("ships/Irbis.jpg");background-position-y:00%;}
 .img11 {background-image: url("ships/WolfhoundIon.jpg");background-position-y:60%;}
-.img12 {background-image: url("ships/Irbis.jpg");background-position-y:00%;}
-.img13 {background-image: url("ships/Irbis.jpg");background-position-y:00%;}
-.img14 {background-image: url("ships/Irbis.jpg");background-position-y:00%;}
+.img12 {background-image: url("ships/Dywyrn.jpg");background-position-y:00%;}
+.img13 {background-image: url("ships/Spiral.jpg");background-position-y:00%;}
+.img14 {background-image: url("ships/Pilgrim.jpg");background-position-y:60%;}
 .img15 {background-image: url("ships/Irbis.jpg");background-position-y:00%;}
 
 
@@ -98,7 +102,7 @@ max-width: 96%;max-height: 88%;flex: 1 0 10%;
 }
 .EA_Image:hover{scale: 99%;border-width: .8em;border-radius:1em/1em;padding: 0em;}
 
-.EA_Content {
+.EA_Content, .SubArticle {
 display: inline-block;
 font-size: calc(1.5rem + .5vw);
 color:white;
@@ -110,27 +114,74 @@ white-space:pre-line;
 }
 
 .SubArticleNav{
-display: inline-block;
 padding: .6%;
-background-color: gray;
+background-color: rgba(24, 60, 70, 0.60);
 margin-bottom: 1%;
 border-radius: 1em/1em;
-color: #48bde0;
+margin-top: -1.5%;
 }
 
-.SubArticle{
+.SubArticleNav > a {
 padding: .2%;
 background-color: #feffff;
 border-radius: .4em/.4em;
 transition: .2s;
 }
 
-.SubArticle:hover{
+
+.SubArticleNav > a:hover {
 padding:.3%;
 color: white;
 background-color: #48bde0;
 }
 
+.label1 {
+border-radius: .4em/.4em;
+padding: .25em;
+transition: .2s;
+background-color: #fff;
+color: #48bde0;
+}
+
+.label1:hover {
+padding: .4em;
+
+}
+
+.SubArticle {
+display: none;
+}
+
+.SubArticle a {
+display: flex;
+flex-direction: column;
+}
+
+.SubArticle:target {
+display: inline-block;
+}
+
+input {
+display: none;
+}
+
+
+input[id=Pilgrim1]:checked ~ #Pilgrim1 {display: contents;}
+
+input[id=Pilgrim2]:checked ~ #Pilgrim2 {display: contents;}
+
+
+input[id="Pilgrim1"]:checked ~ .SubArticleNav > [for="Pilgrim1"] {background-color:var(--blue);color: white;padding: .4em;}
+
+input[id="Pilgrim2"]:checked ~ .SubArticleNav > [for="Pilgrim2"] {background-color:var(--blue);color: white;padding: .4em;}
+
+
+input[id=Wolfhound1]:checked ~ #Wolfhound1 {display: contents;}
+input[id="Wolfhound1"]:checked ~ .SubArticleNav > [for="Wolfhound1"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Wolfhound2]:checked ~ #Wolfhound2 {display: contents;}
+input[id="Wolfhound2"]:checked ~ .SubArticleNav > [for="Wolfhound2"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Wolfhound3]:checked ~ #Wolfhound3 {display: contents;}
+input[id="Wolfhound3"]:checked ~ .SubArticleNav > [for="Wolfhound3"] {background-color:var(--blue);color: white;padding: .4em;}
 
 
 </style>
