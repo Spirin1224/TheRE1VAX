@@ -38,16 +38,16 @@ body {animation: spin 10s infinite;}
 
 .GuideList {position: static;width: 100%;}
 
-.ShipList {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; }
+.ShipList {height: 80%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; overflow: scroll;}
 
 .TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
 
-.InfoDiv {font-size: 2em;white-space:pre-line;text-align:left;margin-left: 20%;}
+.InfoDiv {font-size: 2em;white-space:pre-line;text-align:center;}
 
 
 
 /* Guide Item - ITM and Caption */
-.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%;}
+.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%; margin-bottom: 2%;}
 .ITM:hover {height:22%;width:22%;}
 
 .ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
@@ -182,6 +182,13 @@ input[id=Wolfhound2]:checked ~ #Wolfhound2 {display: contents;}
 input[id="Wolfhound2"]:checked ~ .SubArticleNav > [for="Wolfhound2"] {background-color:var(--blue);color: white;padding: .4em;}
 input[id=Wolfhound3]:checked ~ #Wolfhound3 {display: contents;}
 input[id="Wolfhound3"]:checked ~ .SubArticleNav > [for="Wolfhound3"] {background-color:var(--blue);color: white;padding: .4em;}
+
+input[id=Tharga1]:checked ~ #Tharga1 {display: contents;}
+input[id="Tharga1"]:checked ~ .SubArticleNav > [for="Tharga1"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Tharga2]:checked ~ #Tharga2 {display: contents;}
+input[id="Tharga2"]:checked ~ .SubArticleNav > [for="Tharga2"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Tharga3]:checked ~ #Tharga3 {display: contents;}
+input[id="Tharga3"]:checked ~ .SubArticleNav > [for="Tharga3"] {background-color:var(--blue);color: white;padding: .4em;}
 
 
 </style>
