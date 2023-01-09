@@ -38,7 +38,7 @@ body {animation: spin 10s infinite;}
 
 .GuideList {position: static;width: 100%;}
 
-.ShipList {height: 80%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; overflow: scroll;}
+.ShipList {height: 80%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; overflow: scroll;scrollbar-width: none;overflow-x: hidden;border: .2em #48BDE0 solid;}
 
 .TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
 
