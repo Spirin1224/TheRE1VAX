@@ -19,9 +19,9 @@ body {animation: spin 10s infinite;}
 .img1 {background-image: url("ships/Marten.png");background-position-y:10%;}
 .img2 {background-image: url("ships/Spike.png");background-position-y:25%;}
 .img3 {background-image: url("ships/Kirishima.png");background-position-y:40%;}
-.img4 {background-image: url("ships/Protazan.png");background-position-y:-20%;}
-.img5 {background-image: url("ships/Relic.png");background-position-y:0%;}
-.img6 {background-image: url("ships/Tyrant.png");background-position-y:10%;}
+.img4 {background-image: url("ships/Protazan.png");background-position-y:-60%;background-position-x:80%;}
+.img5 {background-image: url("ships/Relic.png");background-position-y:50%;}
+.img6 {background-image: url("ships/Tyrant.png");background-position-y:20%;}
 .img7 {background-image: url("ships/Singularity.png");background-position-y:45%;}
 .img8 {background-image: url("ships/Vigilant.png");background-position-y:0%;}
 .img9 {background-image: url("ships/Kusarigama.png");background-position-y:60%;}
@@ -31,6 +31,8 @@ body {animation: spin 10s infinite;}
 .img13 {background-image: url("ships/Spiral.jpg");background-position-y:00%;}
 .img14 {background-image: url("ships/Pilgrim.jpg");background-position-y:60%;}
 .img15 {background-image: url("ships/Irbis.jpg");background-position-y:00%;}
+.img16 {background-image: url("ships/Tharga.png");background-position-y:50%;}
+.img17 {background-image: url("ships/Confessor.png");background-position-y:50%;}
 
 
 /* Guidelist */
@@ -38,7 +40,7 @@ body {animation: spin 10s infinite;}
 
 .GuideList {position: static;width: 100%;}
 
-.ShipList {height: 80%; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; flex-direction: row; overflow: scroll;scrollbar-width: none;overflow-x: hidden;border: .2em #48BDE0 solid;}
+.ShipList {height: 80%; display: flex; justify-content: center; flex-wrap: wrap; flex-direction: row;align-items: center; overflow: scroll;scrollbar-width: none;overflow-x: hidden;border: .2em #48BDE0 solid;}
 
 .TitleDiv, .InfoDiv {width: 100%; font-size:calc(1.5rem + 3vw);text-align: center;color: #48BDE0;}
 
@@ -47,10 +49,10 @@ body {animation: spin 10s infinite;}
 
 
 /* Guide Item - ITM and Caption */
-.ITM {height:20%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%; margin-bottom: 2%;}
-.ITM:hover {height:22%;width:22%;}
+.ITM {height:30%; width:20%; color: #00283c; transition: .2s ease-in-out; margin: .5%; display: flex;flex-direction: column;}
+.ITM:hover {height:33%;width:22%;}
 
-.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 105%;}
+.ITMimg {width: 100%;border-radius: .5rem .5rem 0% 0%;background-size: cover;height: 100%;}
 
 .img, .EA_Image {
 position: static;max-width: 100%;height:auto;
@@ -166,16 +168,15 @@ display: none;
 }
 
 
+/* Checkboxes Code */
+
+/* Pilgrim */
 input[id=Pilgrim1]:checked ~ #Pilgrim1 {display: contents;}
-
-input[id=Pilgrim2]:checked ~ #Pilgrim2 {display: contents;}
-
-
 input[id="Pilgrim1"]:checked ~ .SubArticleNav > [for="Pilgrim1"] {background-color:var(--blue);color: white;padding: .4em;}
-
+input[id=Pilgrim2]:checked ~ #Pilgrim2 {display: contents;}
 input[id="Pilgrim2"]:checked ~ .SubArticleNav > [for="Pilgrim2"] {background-color:var(--blue);color: white;padding: .4em;}
 
-
+/* Wolfhound */
 input[id=Wolfhound1]:checked ~ #Wolfhound1 {display: contents;}
 input[id="Wolfhound1"]:checked ~ .SubArticleNav > [for="Wolfhound1"] {background-color:var(--blue);color: white;padding: .4em;}
 input[id=Wolfhound2]:checked ~ #Wolfhound2 {display: contents;}
@@ -183,6 +184,7 @@ input[id="Wolfhound2"]:checked ~ .SubArticleNav > [for="Wolfhound2"] {background
 input[id=Wolfhound3]:checked ~ #Wolfhound3 {display: contents;}
 input[id="Wolfhound3"]:checked ~ .SubArticleNav > [for="Wolfhound3"] {background-color:var(--blue);color: white;padding: .4em;}
 
+/* Tharga */
 input[id=Tharga1]:checked ~ #Tharga1 {display: contents;}
 input[id="Tharga1"]:checked ~ .SubArticleNav > [for="Tharga1"] {background-color:var(--blue);color: white;padding: .4em;}
 input[id=Tharga2]:checked ~ #Tharga2 {display: contents;}
