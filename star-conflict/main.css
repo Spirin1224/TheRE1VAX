@@ -19,16 +19,16 @@ body {animation: spin 10s infinite;}
 .img1 {background-image: url("ships/Marten.png");background-position-y:10%;}
 .img2 {background-image: url("ships/Spike.png");background-position-y:25%;}
 .img3 {background-image: url("ships/Kirishima.png");background-position-y:40%;}
-.img4 {background-image: url("ships/Protazan.png");background-position-y:-60%;background-position-x:80%;}
+.img4 {background-image: url("ships/Protazan.png");background-position-y:20%;background-position-x:80%;}
 .img5 {background-image: url("ships/Relic.png");background-position-y:50%;}
 .img6 {background-image: url("ships/Tyrant.png");background-position-y:20%;}
 .img7 {background-image: url("ships/Singularity.png");background-position-y:45%;}
-.img8 {background-image: url("ships/Vigilant.png");background-position-y:0%;}
+.img8 {background-image: url("ships/Vigilant.png");background-position-y:40%;}
 .img9 {background-image: url("ships/Kusarigama.png");background-position-y:60%;}
 .img10 {background-image: url("ships/Irbis.jpg");background-position-y:28%;}
 .img11 {background-image: url("ships/WolfhoundIon.jpg");background-position-y:60%;}
 .img12 {background-image: url("ships/Dywyrn.jpg");background-position-y:00%;}
-.img13 {background-image: url("ships/Spiral.jpg");background-position-y:00%;}
+.img13 {background-image: url("ships/Spiral.jpg");background-position-y:40%;}
 .img14 {background-image: url("ships/Pilgrim.jpg");background-position-y:60%;}
 .img16 {background-image: url("ships/Tharga.jpg");background-position-y:50%;}
 .img17 {background-image: url("ships/Confessor.png");background-position-y:50%;}
@@ -53,7 +53,7 @@ body {animation: spin 10s infinite;}
 .ITM {display:flex;
   flex: 0 0 20%;
   color: #00283c; transition: .2s ease-in-out; margin: .5%; display: flex;flex-direction: column;
-min-height:20%;
+min-height:26%;
 width:50%;
 max-height:50%;
 height: min-content;
