@@ -35,6 +35,9 @@ body {animation: spin 10s infinite;}
 .img18 {background-image: url("ships/Zeta.jpg");background-position-y:50%;}
 .img19{background-image: url("ships/Other.jpg");background-position-y:50%;}
 .img20{background-image: url("ships/Dyrnwyn.jpg");background-position-y:50%;}
+.imgDart{background-image: url("ships/DartBuild.png");background-position-y:50%;}
+.imgTaikin{background-image: url("ships/.jpg");background-position-y:50%;}
+
 
 /* Guidelist */
 .RendersWrapper, .GuideList, .ShipList, .EA, .lightbox, .wrapper, .ITMimg {height:100%;}
@@ -106,13 +109,13 @@ transition: .4s;transition-timing-function: cubic-bezier(0, 1, .8, 1.2);
 display:flex;
 align-self: center;
 background-color: black;
-border: 0em #48BDE0 solid;border-radius:1em/1em;
-padding: .5em;
+border: 0rem #48BDE0 solid;border-radius:1rem/1rem;
+padding: .5rem;
 transition: .1s, forwards;transition-timing-function: ease-in-out;
 z-index: +10;
 max-width: 96%;max-height: 88%;
 }
-.EA_Image:hover{scale: 99%;border-width: .8em;border-radius:1em/1em;padding: 0em;}
+.EA_Image:hover{scale:.99;border-width: .8rem;border-radius:1rem/1rem;padding: 0rem;}
 
 .EA_Content, .SubArticle {
 display: inline-block;
@@ -120,7 +123,7 @@ font-size: calc(1.5rem + .5vw);
 color:white;
 background-color: rgba(72, 189, 224, 0.86);
 padding: 1.5%;
-border-radius:1em/1em;
+border-radius:1rem/1rem;
 margin:2% 2% 6% 2%;
 white-space:pre-line;
 }
@@ -131,6 +134,7 @@ background-color: rgba(24, 60, 70, 0.60);
 margin-bottom: 1%;
 border-radius: 1em/1em;
 margin-top: -1.5%;
+border: .2em #48BDE0 solid;
 }
 
 .SubArticleNav > a {
@@ -178,6 +182,38 @@ display: none;
 }
 
 
+.arrows {
+align-self: center;
+display: inline-block;
+position: static;
+width: min-content;
+overflow: visible;
+}
+
+.arrows path {
+  stroke: #2994D1;
+  fill: transparent;
+  stroke-width: .2em;  
+  animation: arrow .4s infinite;
+  -webkit-animation: arrow 1s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0;transform: translateY(-50px);}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0; transform: translateY(10px)}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
 /* Checkboxes Code */
 
 /* Pilgrim */
@@ -201,3 +237,17 @@ input[id=Tharga2]:checked ~ #Tharga2 {display: contents;}
 input[id="Tharga2"]:checked ~ .SubArticleNav > [for="Tharga2"] {background-color:var(--blue);color: white;padding: .4em;}
 input[id=Tharga3]:checked ~ #Tharga3 {display: contents;}
 input[id="Tharga3"]:checked ~ .SubArticleNav > [for="Tharga3"] {background-color:var(--blue);color: white;padding: .4em;}
+
+/* Kusarigama */
+input[id=Kusarigama1]:checked ~ #Kusarigama1 {display: contents;}
+input[id="Kusarigama1"]:checked ~ .SubArticleNav > [for="Kusarigama1"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Kusarigama2]:checked ~ #Kusarigama2 {display: contents;}
+input[id="Kusarigama2"]:checked ~ .SubArticleNav > [for="Kusarigama2"] {background-color:var(--blue);color: white;padding: .4em;}
+
+/* Tyrant */
+input[id=Tyrant1]:checked ~ #Tyrant1 {display: contents;}
+input[id="Tyrant1"]:checked ~ .SubArticleNav > [for="Tyrant1"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Tyrant2]:checked ~ #Tyrant2 {display: contents;}
+input[id="Tyrant2"]:checked ~ .SubArticleNav > [for="Tyrant2"] {background-color:var(--blue);color: white;padding: .4em;}
+input[id=Tyrant3]:checked ~ #Tyrant3 {display: contents;}
+input[id="Tyrant3"]:checked ~ .SubArticleNav > [for="Tyrant3"] {background-color:var(--blue);color: white;padding: .4em;}
