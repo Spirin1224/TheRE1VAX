@@ -1,0 +1,142 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html, body {height: 100%;margin: 0;padding: 0;
+font-family: 'Montserrat', sans-serif;
+-ms-overflow-style: none;scrollbar-width: none;}
+
+a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.NavBar {
+position:fixed;height:100%;width:4%;background-color:grey;transition: .3s ease-in;z-index:1;
+}
+
+.NavBar:Hover {width:40%;}
+
+.Menu {opacity:0%;transition: 1s ease-in;width:auto;height:100%;display:flex;}
+
+
+.NavBar:Hover > .Menu {opacity:100%;}
+
+
+.img1 {background-image: url("images/Stinger.jpg");background-position-y:25%;}
+.img2 {background-image: url("images/Scout.jpg");background-position-y:25%;}
+.img3 {background-image: url("images/Vindicator.jpg");background-position-y:25%;}
+
+
+.ITM {display: flex;flex-direction: column;
+font-size:2rem;
+margin:1%;
+flex: 0 0 30%;
+color: #00283c; transition: .1s ease-in;
+min-height:30%;
+width:40%;
+max-height:50%;
+height: min-content;
+background-color:darkgrey;border-radius:.5rem;
+cursor:crosshair;}
+
+.ITMimg {/*! width: 100%; */border-radius: .5rem .5rem 0% 0%;background-size: cover;/*! height: 100%; */display: flex;flex-grow: 1;}
+
+
+
+
+.Content {
+background-color:rgb(236, 237, 233);
+width:96%;
+float:right;
+}
+
+.img, .EA_Image {
+position: static;max-width: 100%;height:auto;
+background-size: contain;background-repeat: no-repeat;background-position: center center;
+z-index:2;
+}
+
+
+.Article {
+font-family: 'Montserrat', sans-serif;
+padding:5%;
+float:left;
+opacity: 0%;
+font-size:3rem;
+white-space: pre-line;
+margin: 0% 15%;
+font-size: 180%;
+line-height: 48px;
+}
+.Article:target {
+    animation: fadeInFromNone 2s ease forwards;
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+</style>
+
+<div class="NavBar">
+
+<div class="Menu">
+<a draggable="false" href="#Stinger" class="ITM"><div class="ITMimg img1"></div><div class="caption">Stinger</div></a>
+<a draggable="false" href="#Scout" class="ITM"><div class="ITMimg img2"></div><div class="caption">Scout</div></a>
+<a draggable="false" href="#Vindicator" class="ITM"><div class="ITMimg img3"></div><div class="caption">Vindicator</div></a>
+</div>
+
+
+</div>
+
+
+<div class="Content">
+
+<div id="Stinger" class="Article">Spike:
+Quick Tactics, Thoughts and Strategies:
+[[Build is outdated!!!]]
+Doppler Laser buff works with strafe speed as well. Possible to maintain 25% damage buff just by strafing. Strafing allows buff at low overall speeds.
+-
+Many good combinations of active modules exist for spike. Experiment and use them for your own build and needs.
+-
+EBM good for lazy interceptors, command fighters, groups of people, and destroyers.
+-
+White Noise Jammer. Very helpful when fighting ECM’s. Don’t brush it off.
+-
+Pirate Orion Targeting Complex does higher total damage than mk5 OTC
+-
+—suggestions
+OTC, WNJ/EBM/Dagger, AC, Shield/Hull/Quantum
+</div>
+
+<div id="Scout" class="Article">Spike:
+Quick Tactics, Thoughts and Strategies:
+[[Build is outdated!!!]]
+Doppler Laser buff works with strafe speed as well. Possible to maintain 25% damage buff just by strafing. Strafing allows buff at low overall speeds.
+-
+Many good combinations of active modules exist for spike. Experiment and use them for your own build and needs.
+-
+EBM good for lazy interceptors, command fighters, groups of people, and destroyers.
+-
+White Noise Jammer. Very helpful when fighting ECM’s. Don’t brush it off.
+-
+Pirate Orion Targeting Complex does higher total damage than mk5 OTC
+-
+—suggestions
+OTC, WNJ/EBM/Dagger, AC, Shield/Hull/Quantum
+</div>
+
+<div>
