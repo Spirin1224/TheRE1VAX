@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 html, body {height: 100%;margin: 0;padding: 0;
 font-family: 'Montserrat', sans-serif;
--ms-overflow-style: none;scrollbar-width: none;}
+-ms-overflow-style: none;scrollbar-width: none;background-color:rgb(236, 237, 233);
+}
 
 a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
 
@@ -11,15 +13,17 @@ a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:bl
 
 
 .NavBar {
-position:fixed;height:100%;width:4%;background-color:grey;transition: .3s ease-in;z-index:1;
+display:grid;min-width:4%;
+scrollbar-width: none;
+position:fixed;height:100%;background-color:grey;grid-template-columns:0fr;transition:grid-template-columns .8s ease-in;z-index:1;justify-items:end;
 }
 
-.NavBar:Hover {width:40%;}
+.NavBar:Hover {grid-template-columns:1fr;transition:grid-template-columns 1s ease-out;}
 
-.Menu {opacity:0%;transition: 1s ease-in;width:auto;height:100%;display:flex;}
+.Menu {padding:2rem;opacity:0%;transition: 1s ease-out;width:auto;max-width:40rem;height:100%;display:flex;flex-flow:row wrap;overflow:scroll;scrollbar-width:none;justify-content:space-around;}
 
 
-.NavBar:Hover > .Menu {opacity:100%;}
+.NavBar:Hover > .Menu {opacity:100%;transition: 1s ease-in;}
 
 
 .img1 {background-image: url("images/Stinger.jpg");background-position-y:25%;}
@@ -27,13 +31,13 @@ position:fixed;height:100%;width:4%;background-color:grey;transition: .3s ease-i
 .img3 {background-image: url("images/Vindicator.jpg");background-position-y:25%;}
 
 
-.ITM {display: flex;flex-direction: column;
+.ITM {display: flex;flex-direction: column;flex-flow:column wrap;
 font-size:2rem;
 margin:1%;
 flex: 0 0 30%;
 color: #00283c; transition: .1s ease-in;
 min-height:30%;
-width:40%;
+min-width:40rem;
 max-height:50%;
 height: min-content;
 background-color:darkgrey;border-radius:.5rem;
@@ -59,7 +63,7 @@ z-index:2;
 
 .Article {
 font-family: 'Montserrat', sans-serif;
-padding:5%;
+padding:5%;padding-top:1%;
 float:left;
 opacity: 0%;
 font-size:3rem;
@@ -67,23 +71,28 @@ white-space: pre-line;
 margin: 0% 15%;
 font-size: 180%;
 line-height: 48px;
+display:none;
 }
 .Article:target {
+display:block;
     animation: fadeInFromNone 2s ease forwards;
 }
 
 @keyframes fadeInFromNone {
     0% {
+transform: translateY(40px);
         display: none;
         opacity: 0;
     }
 
     1% {
+transform: translateY(40px);
         display: block;
         opacity: 0;
     }
 
     100% {
+transform: translateY(0px);
         display: block;
         opacity: 1;
     }
