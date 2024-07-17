@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="main.css">
 <script>let FF_FOUC_FIX;</script>
 </head>
+<div onclick="DarkModeToggle()" class="DarkModeButton"></div>
+<div id="ArticleMain" class="articlemain"><div class="article">
 
 <div id="Info" class="TitleDiv">TheRE1VAX Guide to Star Conflict Ships</div>
 
@@ -1708,3 +1710,18 @@ To Do List
 
 
 </div>
+
+<script>
+UpdateDarkMode();
+if( !window.localStorage.getItem("DarkMode")){window.localStorage.DarkMode = "false";};
+
+function UpdateDarkMode() {
+if (window.localStorage.DarkMode === "true") {document.getElementById("ArticleMain").style.backgroundColor = "#00293d"; document.getElementById("ArticleMain").style.color = "#ECEDE9";} else {document.getElementById("ArticleMain").style.backgroundColor = "#ECEDE9"; document.getElementById("ArticleMain").style.color = "#00293d";};}
+
+function DarkModeToggle() {
+var x = window.localStorage.DarkMode;
+if (x === "false") {x = "true";} else {x = "false";};
+window.localStorage.DarkMode = x;
+UpdateDarkMode();}
+</script>
+
