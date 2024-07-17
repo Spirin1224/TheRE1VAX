@@ -7,8 +7,7 @@ font-family: 'Montserrat', sans-serif;
 
 a:hover, a:visited, a:link, a:active, .caption a {text-decoration: none;color:black;}
 
-body {animation: spin 10s infinite;}
-@keyframes spin {0% {background-color: #cad5de; }50% {background-color: white; }100% {background-color: #cad5de; }}
+body {background-color: white; transition-duration: .4s;}
 
 :root {
   --blue: #48bde0;

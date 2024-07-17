@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="main.css">
 <script>let FF_FOUC_FIX;</script>
 </head>
+<body id="body">
 <div onclick="DarkModeToggle()" class="DarkModeButton"></div>
 <div id="ArticleMain" class="articlemain"><div class="article">
 
@@ -1710,13 +1711,14 @@ To Do List
 
 
 </div>
+</body>
 
 <script>
 UpdateDarkMode();
 if( !window.localStorage.getItem("DarkMode")){window.localStorage.DarkMode = "false";};
 
 function UpdateDarkMode() {
-if (window.localStorage.DarkMode === "true") {document.getElementById("ArticleMain").style.backgroundColor = "#00293d"; document.getElementById("ArticleMain").style.color = "#ECEDE9";} else {document.getElementById("ArticleMain").style.backgroundColor = "#ECEDE9"; document.getElementById("ArticleMain").style.color = "#00293d";};}
+if (window.localStorage.DarkMode === "true") {document.getElementById("body").style.backgroundColor = "#00293d"; document.getElementById("body").style.color = "#ECEDE9";} else {document.getElementById("body").style.backgroundColor = "#ECEDE9"; document.getElementById("body").style.color = "#00293d";};}
 
 function DarkModeToggle() {
 var x = window.localStorage.DarkMode;
@@ -1725,3 +1727,4 @@ window.localStorage.DarkMode = x;
 UpdateDarkMode();}
 </script>
 
+</html>
