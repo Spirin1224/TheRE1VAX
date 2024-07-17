@@ -4,16 +4,18 @@
 <title>Star Conflict - Ships and Guides</title>
 <link rel="stylesheet" href="main.css">
 <script>let FF_FOUC_FIX;
-UpdateDarkMode();
-if( !window.localStorage.getItem("DarkMode")){window.localStorage.DarkMode = "false";};
+
+if (!localStorage.DarkMode) {
+localStorage.setItem(DarkMode, false);
+}
 
 function UpdateDarkMode() {
-if (window.localStorage.DarkMode === "true") {document.getElementById("body").style.backgroundColor = "#00293d"; document.getElementById("body").style.color = "#ECEDE9";} else {document.getElementById("body").style.backgroundColor = "#ECEDE9"; document.getElementById("body").style.color = "#00293d";};}
+if (localStorage.DarkMode === "true") {document.getElementById("body").style.backgroundColor = "#00293d"; document.getElementById("body").style.color = "#ECEDE9";} else {document.getElementById("body").style.backgroundColor = "#ECEDE9"; document.getElementById("body").style.color = "#00293d";};}
 
 function DarkModeToggle() {
-var x = window.localStorage.DarkMode;
+var x = localStorage.DarkMode;
 if (x === "false") {x = "true";} else {x = "false";};
-window.localStorage.DarkMode = x;
+localStorage.DarkMode = x;
 UpdateDarkMode();}
 </script>
 
@@ -1725,3 +1727,7 @@ To Do List
 
 </div>
 </body>
+
+<script>
+UpdateDarkMode()
+</script>
