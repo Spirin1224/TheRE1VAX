@@ -10,7 +10,15 @@ localStorage.setItem(DarkMode, false);
 }
 
 function UpdateDarkMode() {
-if (localStorage.DarkMode === "true") {document.getElementById("body").style.backgroundColor = "#00293d"; document.getElementById("body").style.color = "#ECEDE9"; document.getElementById("DarkModeButton").style.backgroundColor = "#ECEDE9";} else {document.getElementById("body").style.backgroundColor = "#ECEDE9"; document.getElementById("body").style.color = "#00293d"; document.getElementById("DarkModeButton").style.backgroundColor = "#00293d";};}
+if (localStorage.DarkMode === "true") {
+document.documentElement.style.setProperty("--modeColor1", "#00293d");
+document.documentElement.style.setProperty("--modeColor2", "#ECEDE9");
+document.documentElement.style.setProperty("--textColor", "#ECEDE9");
+} else {
+document.documentElement.style.setProperty("--modeColor1", "#ECEDE9");
+document.documentElement.style.setProperty("--modeColor2", "#00293d");
+document.documentElement.style.setProperty("--textColor", "#48BDE0");
+};}
 
 function DarkModeToggle() {
 var x = localStorage.DarkMode;
