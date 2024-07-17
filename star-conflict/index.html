@@ -10,7 +10,7 @@ localStorage.setItem(DarkMode, false);
 }
 
 function UpdateDarkMode() {
-if (localStorage.DarkMode === "true") {document.getElementById("body").style.backgroundColor = "#00293d"; document.getElementById("body").style.color = "#ECEDE9";} else {document.getElementById("body").style.backgroundColor = "#ECEDE9"; document.getElementById("body").style.color = "#00293d";};}
+if (localStorage.DarkMode === "true") {document.getElementById("body").style.backgroundColor = "#00293d"; document.getElementById("body").style.color = "#ECEDE9"; document.getElementById("DarkModeButton").style.backgroundColor = "#ECEDE9";} else {document.getElementById("body").style.backgroundColor = "#ECEDE9"; document.getElementById("body").style.color = "#00293d"; document.getElementById("DarkModeButton").style.backgroundColor = "#00293d";};}
 
 function DarkModeToggle() {
 var x = localStorage.DarkMode;
@@ -22,7 +22,7 @@ UpdateDarkMode();}
 </head>
 
 <body id="body">
-<div onclick="DarkModeToggle()" class="DarkModeButton"></div>
+<div onclick="DarkModeToggle()" class="DarkModeButton" id="DarkModeButton"></div>
 
 <div id="Info" class="TitleDiv">TheRE1VAX Guide to Star Conflict Ships</div>
 
@@ -36,7 +36,6 @@ UpdateDarkMode();}
 <a draggable="false" href="#Relic" class="ITM"><div class="ITMimg img5" alt="Render 1"></div><div class="caption">Relic</div></a>
 <a draggable="false" href="#Tyrant" class="ITM"><div class="ITMimg img6" alt="Render 1"></div><div class="caption">Tyrant</div></a>
 <a draggable="false" href="#Singularity" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Singularity</div></a>
-<a draggable="false" href="#Dart" class="ITM"><div class="ITMimg img7" alt="Render 1"></div><div class="caption">Dart</div></a>
 <a draggable="false" href="#Vigilant" class="ITM"><div class="ITMimg img8" alt="Render 1"></div><div class="caption">Vigilant</div></a>
 <a draggable="false" href="#Kusarigama" class="ITM"><div class="ITMimg img9" alt="Render 1"></div><div class="caption">Kusarigama</div></a>
 <a draggable="false" href="#Tornado" class="ITM"><div class="ITMimg imgTornado" alt="Render 1"></div><div class="caption">Tornado</div></a>
